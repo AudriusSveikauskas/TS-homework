@@ -38,7 +38,7 @@ console.group('Assertions - užduotys');
   };
 
   const assertionsSubmitBtn = document.createElement('button');
-  assertionsSubmitBtn.setAttribute('id', 'submit-button');
+  assertionsSubmitBtn.setAttribute('id', 'assertion-submit-button');
   assertionsSubmitBtn.textContent = 'Submit';
 
   console.group(
@@ -46,8 +46,8 @@ console.group('Assertions - užduotys');
   );
   {
     const assertionTask1Label = document.createElement('label');
-    assertionTask1Label.setAttribute('for', 'submit-button');
-    assertionTask1Label.textContent = 'assertions.ts -> task 1';
+    assertionTask1Label.setAttribute('for', 'assertion-submit-button');
+    assertionTask1Label.textContent = 'assertions.ts => task 1';
 
     const taskWrapperEl = createWrapper();
     taskWrapperEl.append(assertionTask1Label, assertionsSubmitBtn);
@@ -55,11 +55,11 @@ console.group('Assertions - užduotys');
     container.append(taskWrapperEl);
 
     const submitBtn = document.getElementById(
-      'submit-button',
+      'assertion-submit-button',
     ) as HTMLButtonElement;
     submitBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      console.log('assertions.ts -> task 1 -> paspausta');
+      console.log('assertions.ts => task 1: paspausta');
     });
   }
   console.groupEnd();
@@ -68,7 +68,26 @@ console.group('Assertions - užduotys');
     '2. Sukurkite <div> elementą ir papildikyte jo turinį mažu kvadaratėliu kiekvieną kart, kuomet paspaudžiamas [1.] mygtukas',
   );
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia
+    const assertionTask2Label = document.createElement('label');
+    assertionTask2Label.setAttribute('for', 'task2-div');
+    assertionTask2Label.textContent = 'assertions.ts => task 2';
+
+    const assertionTask2Div = document.createElement('div');
+    assertionTask2Div.classList.add('task-div');
+    assertionTask2Div.setAttribute('id', 'task2-div');
+
+    const taskWrapperEl = createWrapper();
+    taskWrapperEl.append(assertionTask2Label, assertionTask2Div);
+
+    container.append(taskWrapperEl);
+
+    const submitBtn = document.getElementById(
+      'assertion-submit-button',
+    ) as HTMLButtonElement;
+    submitBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      assertionTask2Div.textContent += '😎';
+    });
   }
   console.groupEnd();
 
