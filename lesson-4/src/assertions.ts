@@ -13,6 +13,10 @@ type PossibleType = string | number;
 const someNumber: PossibleType = 17 as number;
 const title: PossibleType = 'Grace' as string;
 
+const form = document.createElement('form') as HTMLFormElement;
+form.setAttribute('id', 'form-add-user');
+document.body.append(form);
+
 // Šiuo atveju 'teigiame' kad rastas elementas bus būtent form'os elementas.
 const formAddUser: HTMLFormElement = document.querySelector(
   '#form-add-user',
@@ -25,15 +29,29 @@ formAddUser.onsubmit = (e) => {
 // Alikite užduotis, ir atspausdinkite savo sprendimo pavyzdžius užduoties blokuose
 console.group('Assertions - užduotys');
 {
-  // ↓↓↓↓ Tipus ir užduotims bendrus kintamuosius apraškite čia ↓↓↓↓
+  const container = document.getElementById('container') as HTMLDivElement;
 
-  // ↑↑↑↑ Tipus ir užduotims bendrus kintamuosius apraškite čia ↑↑↑↑
+  const btn = document.createElement('button');
+  btn.setAttribute('id', 'submit-button');
+  btn.textContent = 'Submit';
+
+  const btnLabel = document.createElement('label');
+  btnLabel.setAttribute('for', 'submit-button');
+  btnLabel.textContent = 'assertions.ts -> task 1';
+
+  container.append(btnLabel, btn);
 
   console.group(
     '1. Sukurkite HTML mygtuką ir uždėkite jam įvykio klausiklį, jog paspaudus, būt spausdinamas tekstas "paspausta!"',
   );
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia
+    const submitBtn = document.getElementById(
+      'submit-button',
+    ) as HTMLButtonElement;
+    submitBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      console.log('assertions.ts -> task 1 -> paspausta');
+    });
   }
   console.groupEnd();
 
