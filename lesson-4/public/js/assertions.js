@@ -1,14 +1,4 @@
 "use strict";
-const someNumber = 17;
-const title = 'Grace';
-const form = document.createElement('form');
-form.setAttribute('id', 'form-add-user');
-document.body.append(form);
-const formAddUser = document.querySelector('#form-add-user');
-formAddUser.onsubmit = (e) => {
-    e.preventDefault();
-    console.log(`Ateityje pridėsiu vartotoją: ${title} (${someNumber})`);
-};
 console.group('Assertions - užduotys');
 {
     const container = document.getElementById('container');
