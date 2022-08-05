@@ -7,20 +7,27 @@ document.body.append(form);
 const formAddUser = document.querySelector('#form-add-user');
 formAddUser.onsubmit = (e) => {
     e.preventDefault();
-    console.log('Ateityje pridėsiu vartotoją');
+    console.log(`Ateityje pridėsiu vartotoją: ${title} (${someNumber})`);
 };
 console.group('Assertions - užduotys');
 {
     const container = document.getElementById('container');
+    const createWrapper = () => {
+        const taskWrapper = document.createElement('div');
+        taskWrapper.classList.add('task-wrapper');
+        return taskWrapper;
+    };
     const btn = document.createElement('button');
     btn.setAttribute('id', 'submit-button');
     btn.textContent = 'Submit';
-    const btnLabel = document.createElement('label');
-    btnLabel.setAttribute('for', 'submit-button');
-    btnLabel.textContent = 'assertions.ts -> task 1';
-    container.append(btnLabel, btn);
     console.group('1. Sukurkite HTML mygtuką ir uždėkite jam įvykio klausiklį, jog paspaudus, būt spausdinamas tekstas "paspausta!"');
     {
+        const btnLabel = document.createElement('label');
+        btnLabel.setAttribute('for', 'submit-button');
+        btnLabel.textContent = 'assertions.ts -> task 1';
+        const task1Wrapper = createWrapper();
+        task1Wrapper.append(btnLabel, btn);
+        container.append(task1Wrapper);
         const submitBtn = document.getElementById('submit-button');
         submitBtn.addEventListener('click', (e) => {
             e.preventDefault();
