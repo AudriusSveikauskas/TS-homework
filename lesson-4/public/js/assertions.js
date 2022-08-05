@@ -1,6 +1,6 @@
 "use strict";
 const someNumber = 17;
-const title = "Grace";
+const title = 'Grace';
 const formAddUser = document.querySelector('#form-add-user');
 formAddUser.onsubmit = (e) => {
     e.preventDefault();

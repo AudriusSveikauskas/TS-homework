@@ -1,14 +1,17 @@
 "use strict";
-const person1 = ["Koridas", "Atmazas"];
-const person2 = ["Paklodijus", "Pagalvė"];
-const person3 = ["Višta", "Maumedienė"];
+const person1 = ['Koridas', 'Atmazas'];
+const person2 = ['Paklodijus', 'Pagalvė'];
+const person3 = ['Višta', 'Maumedienė'];
 let currentAge = 18;
 let currentHeight = 180;
-const age = [currentAge, () => currentAge += 1];
-const height = [currentAge, (h) => {
+const age = [currentAge, () => (currentAge += 1)];
+const height = [
+    currentAge,
+    (h) => {
         if (h)
             currentHeight = h;
-    }];
+    },
+];
 console.group('Tuples - užduotys');
 {
     console.group('1. Sukurkite žmogaus vardo ir amžiaus rinkinį');

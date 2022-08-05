@@ -1,6 +1,8 @@
+/* eslint no-console: ["error", { allow: ["groupCollapsed", "log", "groupEnd", "dir", "group"] }] */
+
 /*
   Enum(išvardinimas) - tai konstantų rinkinys.
-  Enum(išvardinimai) yra naudojami įvardinti tipams ar nustatymams. 
+  Enum(išvardinimai) yra naudojami įvardinti tipams ar nustatymams.
   Jų reikšmės dažniau naudojamos tipo patikrinimams, nei atvazdavimui.
 */
 
@@ -14,13 +16,13 @@ enum WeekDays {
   Friday, // 5
   Saturday, // 6
   Sunday, // 7
-};
+}
 
 // Jei nenurodote pirmosios reikšmės, numeruojama nuo 0
 enum Answer {
   No, // 0
   Yes, // 1
-};
+}
 
 // Jei išvardinamų konstantų tipas yra ne skaičius, privalote įvardinti kiekvieną narį
 enum WeekDayNamesLT {
@@ -31,7 +33,7 @@ enum WeekDayNamesLT {
   Friday = 'penktadienis',
   Saturday = 'šeštadienis',
   Sunday = 'sekmadienis',
-};
+}
 
 // Alikite užduotis, ir atspausdinkite savo sprendimo pavyzdžius užduoties blokuose
 console.group('Literal types - užduotys');
@@ -40,24 +42,26 @@ console.group('Literal types - užduotys');
 
   // ↑↑↑↑ Tipus ir užduotims bendrus kintamuosius aprašykite čia ↑↑↑↑
 
-  console.group("1. Sukurkite 5 didžiausių Lietuvos miestų išvardinimą.");
+  console.group('1. Sukurkite 5 didžiausių Lietuvos miestų išvardinimą.');
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia 
+    // sprendimą|sprendimo pavyzdžius spausdinkite čia
   }
   console.groupEnd();
 
-  console.group('2. Sukurkite 5 šalių su didžiausiu gyventojų skaičiumi skaitinį išvardinimą.');
+  console.group(
+    '2. Sukurkite 5 šalių su didžiausiu gyventojų skaičiumi skaitinį išvardinimą.',
+  );
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia 
+    // sprendimą|sprendimo pavyzdžius spausdinkite čia
   }
   console.groupEnd();
 
-  console.group('3. Sukurkite 5 šalių su didžiausiu BVP skaitinį išvardinimą pradedant "1".');
+  console.group(
+    '3. Sukurkite 5 šalių su didžiausiu BVP skaitinį išvardinimą pradedant "1".',
+  );
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia 
+    // sprendimą|sprendimo pavyzdžius spausdinkite čia
   }
   console.groupEnd();
-
 }
 console.groupEnd();
-

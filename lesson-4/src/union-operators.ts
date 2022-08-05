@@ -1,5 +1,8 @@
+/* eslint no-console: ["error", { allow: ["groupCollapsed", "log", "groupEnd", "dir", "group"] }] */
+
 /*
-  Union operator (Apjungimo operatorius) yra skirtas aprašytis tipus, kurie apjungia kelis kitus tipus
+  Union operator (Apjungimo operatorius) yra skirtas aprašytis tipus,
+  kurie apjungia kelis kitus tipus
 */
 
 // Union operatorius deklaruojant kintamajį
@@ -17,18 +20,18 @@ const id7: number | string | boolean = true;
 // Union panaudojimas objektų tipuose
 
 type User = {
-  name: string,
-  surname: string,
-  email: string,
-  role: 'ADMIN' | 'USER' | 'MODERATOR',
-  mobile: string,
+  name: string;
+  surname: string;
+  email: string;
+  role: 'ADMIN' | 'USER' | 'MODERATOR';
+  mobile: string;
 };
 
 type Employee = {
-  id: number | string,
-  name: string,
-  surname: string,
-  position: 'Janitor' | 'CTO' | 'Programmer',
+  id: number | string;
+  name: string;
+  surname: string;
+  position: 'Janitor' | 'CTO' | 'Programmer';
 };
 
 // Union panaudojimas funkcijos tipuose
@@ -40,7 +43,7 @@ const call: Call = (callee) => {
   } else {
     console.log('Skambinama:', callee.mobile);
   }
-}
+};
 
 // Union panaudojimas aprašant masyvus
 
@@ -60,24 +63,28 @@ console.group('Union operators - užduotys');
 
   // ↑↑↑↑ Tipus apraškite čia ↑↑↑↑
 
-  console.group('1. Aprašykite objekto tipą Accommodation, kurio savybė "type" būtų, "House" arba "Flat"');
+  console.group(
+    '1. Aprašykite objekto tipą Accommodation, kurio savybė "type" būtų, "House" arba "Flat"',
+  );
   {
-    // sprendimo pavyzdžius spausdinkite čia 
+    // sprendimo pavyzdžius spausdinkite čia
   }
   console.groupEnd();
 
-  console.group('2. Aprašykite objekto tipą Car, kurio savybė "transmission" būtų, "Automatic" arba "Manual"');
+  console.group(
+    '2. Aprašykite objekto tipą Car, kurio savybė "transmission" būtų, "Automatic" arba "Manual"',
+  );
   {
-    // sprendimo pavyzdžius spausdinkite čia 
+    // sprendimo pavyzdžius spausdinkite čia
   }
   console.groupEnd();
 
-  console.group('3. Aprašykite tipą, kuris kintamajam leistų būti: arba Accommodation masyvu, arba Car masyvu');
+  console.group(
+    '3. Aprašykite tipą, kuris kintamajam leistų būti: arba Accommodation masyvu, arba Car masyvu',
+  );
   {
-    // sprendimo pavyzdžius spausdinkite čia 
+    // sprendimo pavyzdžius spausdinkite čia
   }
   console.groupEnd();
-
 }
 console.groupEnd();
-

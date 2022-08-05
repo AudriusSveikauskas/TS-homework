@@ -9,13 +9,11 @@ var WeekDays;
     WeekDays[WeekDays["Saturday"] = 6] = "Saturday";
     WeekDays[WeekDays["Sunday"] = 7] = "Sunday";
 })(WeekDays || (WeekDays = {}));
-;
 var Answer;
 (function (Answer) {
     Answer[Answer["No"] = 0] = "No";
     Answer[Answer["Yes"] = 1] = "Yes";
 })(Answer || (Answer = {}));
-;
 var WeekDayNamesLT;
 (function (WeekDayNamesLT) {
     WeekDayNamesLT["Monday"] = "pirmadienis";
@@ -26,10 +24,9 @@ var WeekDayNamesLT;
     WeekDayNamesLT["Saturday"] = "\u0161e\u0161tadienis";
     WeekDayNamesLT["Sunday"] = "sekmadienis";
 })(WeekDayNamesLT || (WeekDayNamesLT = {}));
-;
 console.group('Literal types - užduotys');
 {
-    console.group("1. Sukurkite 5 didžiausių Lietuvos miestų išvardinimą.");
+    console.group('1. Sukurkite 5 didžiausių Lietuvos miestų išvardinimą.');
     {
     }
     console.groupEnd();
