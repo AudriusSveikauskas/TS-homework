@@ -37,22 +37,22 @@ console.group('Assertions - užduotys');
     return taskWrapper;
   };
 
-  const btn = document.createElement('button');
-  btn.setAttribute('id', 'submit-button');
-  btn.textContent = 'Submit';
+  const assertionsSubmitBtn = document.createElement('button');
+  assertionsSubmitBtn.setAttribute('id', 'submit-button');
+  assertionsSubmitBtn.textContent = 'Submit';
 
   console.group(
     '1. Sukurkite HTML mygtuką ir uždėkite jam įvykio klausiklį, jog paspaudus, būt spausdinamas tekstas "paspausta!"',
   );
   {
-    const btnLabel = document.createElement('label');
-    btnLabel.setAttribute('for', 'submit-button');
-    btnLabel.textContent = 'assertions.ts -> task 1';
+    const assertionTask1Label = document.createElement('label');
+    assertionTask1Label.setAttribute('for', 'submit-button');
+    assertionTask1Label.textContent = 'assertions.ts -> task 1';
 
-    const task1Wrapper = createWrapper();
-    task1Wrapper.append(btnLabel, btn);
+    const taskWrapperEl = createWrapper();
+    taskWrapperEl.append(assertionTask1Label, assertionsSubmitBtn);
 
-    container.append(task1Wrapper);
+    container.append(taskWrapperEl);
 
     const submitBtn = document.getElementById(
       'submit-button',
