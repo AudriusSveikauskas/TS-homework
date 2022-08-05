@@ -1,14 +1,54 @@
 /* eslint no-console: ["error", { allow: ["groupCollapsed", "log", "groupEnd", "dir", "group"] }] */
 
-console.group('Literal types - užduotys');
+console.group('Enum - užduotys');
 {
-  // ↓↓↓↓ Tipus ir užduotims bendrus kintamuosius aprašykite čia ↓↓↓↓
+  const container = document.getElementById('container') as HTMLDivElement;
 
-  // ↑↑↑↑ Tipus ir užduotims bendrus kintamuosius aprašykite čia ↑↑↑↑
+  const taskTitle = document.createElement('h3');
+  taskTitle.textContent = 'enums.ts';
+
+  container.append(taskTitle);
+
+  const createWrapper = (): HTMLDivElement => {
+    const taskWrapper = document.createElement('div');
+    taskWrapper.classList.add('task-wrapper');
+    return taskWrapper;
+  };
+
+  enum BiggestLtCities {
+    Vilnius = 'Vilnius',
+    Kaunas = 'Kaunas',
+    Klaipeda = 'Klaipėda',
+    Panevezys = 'Panevėžys',
+    Siauliai = 'Šiauliai',
+  }
+
+  type CityKeys = keyof typeof BiggestLtCities;
 
   console.group('1. Sukurkite 5 didžiausių Lietuvos miestų išvardinimą.');
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia
+    const enumsTask1Label = document.createElement('label');
+    enumsTask1Label.setAttribute('for', 'enums-cities-list');
+    enumsTask1Label.textContent = 'task 1';
+
+    const biggestLtCitiesList = document.createElement('ul');
+    biggestLtCitiesList.setAttribute('id', 'enums-cities-list');
+
+    const printCities = (key: CityKeys): void => {
+      const biggestLtCitiesListItem = document.createElement('li');
+      biggestLtCitiesListItem.textContent = BiggestLtCities[key];
+      biggestLtCitiesList.append(biggestLtCitiesListItem);
+      console.log(BiggestLtCities[key]);
+    };
+
+    const keysArr = ['Vilnius', 'Kaunas', 'Klaipeda', 'Panevezys', 'Siauliai'];
+    keysArr.forEach((key) => {
+      printCities(key as CityKeys);
+    });
+
+    const taskWrapper = createWrapper();
+    taskWrapper.append(enumsTask1Label, biggestLtCitiesList);
+    container.append(taskWrapper);
   }
   console.groupEnd();
 
