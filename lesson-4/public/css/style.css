@@ -1,8 +1,25 @@
+body {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
 .container {
     max-width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
     margin: 30px auto;
     padding: 30px;
+}
+
+.task-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
