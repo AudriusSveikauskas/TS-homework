@@ -23,7 +23,7 @@ const formAddUser: HTMLFormElement = document.querySelector(
 ) as HTMLFormElement;
 formAddUser.onsubmit = (e) => {
   e.preventDefault();
-  console.log('Ateityje pridėsiu vartotoją');
+  console.log(`Ateityje pridėsiu vartotoją: ${title} (${someNumber})`);
 };
 
 // Alikite užduotis, ir atspausdinkite savo sprendimo pavyzdžius užduoties blokuose
