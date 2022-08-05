@@ -9,13 +9,23 @@ button {
     cursor: pointer;
 }
 
+h3 {
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+label {
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 14px;
+}
+
 .container {
     max-width: 400px;
     display: flex;
     flex-direction: column;
     gap: 30px;
     margin: 30px auto;
-    padding: 30px;
 }
 
 .task-wrapper {
@@ -29,3 +39,11 @@ button {
     width: 100%;
     height: 50px;
 }
+
+.task-p {
+    border: 1px solid gray;
+    width: 100%;
+    height: 50px;
+}
+
+
