@@ -172,6 +172,9 @@ console.group('15. Sukurkite funkciją, kuri priima skaičių masyvą ir grąži
 console.groupEnd();
 console.group('16. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo, paverstų teigiamais, elementų');
 {
+    const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
+    const makeNumbersPositive = (arr) => arr.map((num) => Math.abs(num));
+    console.log(makeNumbersPositive(numbersArr));
 }
 console.groupEnd();
 //# sourceMappingURL=main.js.map

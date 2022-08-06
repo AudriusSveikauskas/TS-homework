@@ -286,6 +286,10 @@ console.group(
   '16. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo, paverstų teigiamais, elementų',
 );
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
+  const makeNumbersPositive = (arr: number[]): number[] =>
+    arr.map((num) => Math.abs(num));
+
+  console.log(makeNumbersPositive(numbersArr));
 }
 console.groupEnd();
