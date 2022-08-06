@@ -25,6 +25,9 @@ console.group('Union operators - užduotys');
         address: 'Molo g. 27-15, Klaipėda 92277',
         price: 52_300,
     };
+    const car1 = { type: 'Automatic', brand: 'BMW', model: '750Li' };
+    const car2 = { type: 'Automatic', brand: 'Audi', model: 'A8' };
+    const car3 = { type: 'Manual', brand: 'Subaru', model: 'Impreza' };
     console.group('1. Aprašykite objekto tipą Accommodation, kurio savybė "type" būtų, "House" arba "Flat"');
     {
         const unionTask1Label = document.createElement('label');
@@ -54,6 +57,25 @@ console.group('Union operators - užduotys');
     console.groupEnd();
     console.group('2. Aprašykite objekto tipą Car, kurio savybė "transmission" būtų, "Automatic" arba "Manual"');
     {
+        const unionTask2Label = document.createElement('label');
+        unionTask2Label.setAttribute('for', 'union-car-list');
+        unionTask2Label.textContent = 'task 2';
+        const carsList = document.createElement('ul');
+        carsList.setAttribute('id', 'union-car-list');
+        const carsArr = [car1, car2, car3];
+        const printCars = (arr) => {
+            arr.forEach((car) => {
+                const { type, brand, model } = car;
+                const accommodationsListItem = document.createElement('li');
+                accommodationsListItem.textContent = `${brand} ${model} (transmission: ${type})`;
+                carsList.append(accommodationsListItem);
+                console.log(car);
+            });
+        };
+        const taskWrapper = createWrapper();
+        taskWrapper.append(unionTask2Label, carsList);
+        container.append(taskWrapper);
+        printCars(carsArr);
     }
     console.groupEnd();
     console.group('3. Aprašykite tipą, kuris kintamajam leistų būti: arba Accommodation masyvu, arba Car masyvu');
