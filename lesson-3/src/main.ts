@@ -278,7 +278,11 @@ console.group(
   '15. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo nelyginių elementų',
 );
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const filterOddNumbers = (arr: number[]): number[] =>
+    arr.filter((num) => num % 2);
+
+  console.log(filterOddNumbers(numbersArr));
 }
 console.groupEnd();
 
