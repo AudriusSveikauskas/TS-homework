@@ -279,8 +279,7 @@ console.group(
 );
 {
   const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const filterOddNumbers = (arr: number[]): number[] =>
-    arr.filter((num) => num % 2);
+  const filterOddNumbers = (arr: number[]): number[] => arr.filter((num) => num % 2);
 
   console.log(filterOddNumbers(numbersArr));
 }
@@ -291,8 +290,7 @@ console.group(
 );
 {
   const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
-  const makeNumbersPositive = (arr: number[]): number[] =>
-    arr.map((num) => Math.abs(num));
+  const makeNumbersPositive = (arr: number[]): number[] => arr.map((num) => Math.abs(num));
 
   console.log(makeNumbersPositive(numbersArr));
 }
