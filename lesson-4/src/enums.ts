@@ -25,6 +25,16 @@ console.group('Enum - užduotys');
 
   type CityKeys = keyof typeof BiggestLtCities;
 
+  enum CountriesHighestPopulation {
+    China,
+    India,
+    USA,
+    Indonesia,
+    Pakistan,
+  }
+
+  type PopulationKeys = keyof typeof CountriesHighestPopulation;
+
   console.group('1. Sukurkite 5 didžiausių Lietuvos miestų išvardinimą.');
   {
     const enumsTask1Label = document.createElement('label');
@@ -56,7 +66,28 @@ console.group('Enum - užduotys');
     '2. Sukurkite 5 šalių su didžiausiu gyventojų skaičiumi skaitinį išvardinimą.',
   );
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia
+    const enumsTask2Label = document.createElement('label');
+    enumsTask2Label.setAttribute('for', 'enums-population-list');
+    enumsTask2Label.textContent = 'task 2';
+
+    const biggestCountriesList = document.createElement('ul');
+    biggestCountriesList.setAttribute('id', 'enums-population-list');
+
+    const printCountries = (key: PopulationKeys): void => {
+      const biggestCountriesListItem = document.createElement('li');
+      biggestCountriesListItem.textContent = `${CountriesHighestPopulation[key]} (${key})`;
+      biggestCountriesList.append(biggestCountriesListItem);
+      console.log(CountriesHighestPopulation[key]);
+    };
+
+    const keysArr = ['China', 'India', 'USA', 'Indonesia', 'Pakistan'];
+    keysArr.forEach((key) => {
+      printCountries(key as PopulationKeys);
+    });
+
+    const taskWrapper = createWrapper();
+    taskWrapper.append(enumsTask2Label, biggestCountriesList);
+    container.append(taskWrapper);
   }
   console.groupEnd();
 
