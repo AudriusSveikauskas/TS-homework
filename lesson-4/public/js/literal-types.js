@@ -38,6 +38,29 @@ console.group('Literal types - užduotys');
     }
     console.group('2. Sukurkite konkrečias 5 šunų veisles. Sukurkite tipą, kurio reikšmė būtų viena iš veislių.');
     {
+        const literalTypesTask2Label = document.createElement('label');
+        literalTypesTask2Label.setAttribute('for', 'literal-breeds-list');
+        literalTypesTask2Label.textContent = 'task 2';
+        const mostPopularDogBreedsList = document.createElement('ul');
+        mostPopularDogBreedsList.setAttribute('id', 'literal-breeds-list');
+        const breed1 = 'Labrador Retriever';
+        const breed2 = 'French Bulldog';
+        const breed3 = 'German Shepherd';
+        const breed4 = 'Golden Retriever';
+        const breed5 = 'Bulldog';
+        const breedsArr = [breed1, breed2, breed3, breed4, breed5];
+        const printBreeds = (arr) => {
+            arr.forEach((breed) => {
+                const mostPopularDogBreedsListItem = document.createElement('li');
+                mostPopularDogBreedsListItem.textContent = breed;
+                mostPopularDogBreedsList.append(mostPopularDogBreedsListItem);
+                console.log(breed);
+            });
+        };
+        const taskWrapper = createWrapper();
+        taskWrapper.append(literalTypesTask2Label, mostPopularDogBreedsList);
+        container.append(taskWrapper);
+        printBreeds(breedsArr);
     }
     console.groupEnd();
     console.group('3. Sukurkite konkrečias 5 mašinos dalių tipus. Sukurkite tipą, kurio reikšmė būtų viena iš dalių.');
