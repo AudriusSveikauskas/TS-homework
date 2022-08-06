@@ -14,6 +14,21 @@ console.group('Tuples - užduotys');
     const ona = ['Ona', 26];
     const jonas = ['Jonas', 48];
     const vilma = ['Vilma', 55];
+    const owner1 = ['LeBron', 'James'];
+    const owner2 = ['Kevin', 'Durant'];
+    const owner3 = ['Stephen', 'Curry'];
+    const owner4 = ['James', 'Harden'];
+    const owner5 = ['Anthony', 'Davis'];
+    const dog1 = ['Labrador Retriever', 5];
+    const dog2 = ['French Bulldog', 2];
+    const dog3 = ['German Shepherd', 8];
+    const dog4 = ['Golden Retriever', 3];
+    const dog5 = ['Bulldog', 7];
+    const ownerAndDog1 = [owner1, dog1];
+    const ownerAndDog2 = [owner2, dog2];
+    const ownerAndDog3 = [owner3, dog3];
+    const ownerAndDog4 = [owner4, dog4];
+    const ownerAndDog5 = [owner5, dog5];
     console.group('1. Sukurkite žmogaus vardo ir amžiaus rinkinį');
     {
         const tuplesTask1Label = document.createElement('label');
@@ -38,6 +53,30 @@ console.group('Tuples - užduotys');
     console.groupEnd();
     console.group('2. Sukurkite šuns šeimininko ir šuns rinkinį(pradžioje teks sukurti Šuns ir Šeiminiko tipus)');
     {
+        const tuplesTask2Label = document.createElement('label');
+        tuplesTask2Label.setAttribute('for', 'tuples-owner-dog-list');
+        tuplesTask2Label.textContent = 'task 2';
+        const ownerAndDogList = document.createElement('ul');
+        ownerAndDogList.setAttribute('id', 'tuples-owner-dog-list');
+        const ownerAndDogListArr = [
+            ownerAndDog1,
+            ownerAndDog2,
+            ownerAndDog3,
+            ownerAndDog4,
+            ownerAndDog5,
+        ];
+        const printOwnerAndDog = (arr) => {
+            arr.forEach((el) => {
+                const ownerAndDogListItem = document.createElement('li');
+                ownerAndDogListItem.textContent = `${el[0][0]} ${el[0][1]} (${el[1][0]}, ${el[1][1]})`;
+                ownerAndDogList.append(ownerAndDogListItem);
+                console.log(`${el[0][0]} ${el[0][1]} (${el[1][0]}, ${el[1][1]})`);
+            });
+        };
+        const taskWrapper = createWrapper();
+        taskWrapper.append(tuplesTask2Label, ownerAndDogList);
+        container.append(taskWrapper);
+        printOwnerAndDog(ownerAndDogListArr);
     }
     console.groupEnd();
     console.group('3. Sukurkite trikampio taškų 2D erdvėje rinkinį(pradžioje teks sukurti 2D Taško tipą)');
