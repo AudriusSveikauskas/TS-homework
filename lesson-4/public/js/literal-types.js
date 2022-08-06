@@ -65,6 +65,29 @@ console.group('Literal types - užduotys');
     console.groupEnd();
     console.group('3. Sukurkite konkrečias 5 mašinos dalių tipus. Sukurkite tipą, kurio reikšmė būtų viena iš dalių.');
     {
+        const literalTypesTask3Label = document.createElement('label');
+        literalTypesTask3Label.setAttribute('for', 'literal-parts-list');
+        literalTypesTask3Label.textContent = 'task 3';
+        const carBodyPartsList = document.createElement('ul');
+        carBodyPartsList.setAttribute('id', 'literal-parts-list');
+        const part1 = 'Hood';
+        const part2 = 'Front Bumper';
+        const part3 = 'Rear Bumper';
+        const part4 = 'Spoiler';
+        const part5 = 'Fender';
+        const breedsArr = [part1, part2, part3, part4, part5];
+        const printBreeds = (arr) => {
+            arr.forEach((part) => {
+                const carBodyPartsListItem = document.createElement('li');
+                carBodyPartsListItem.textContent = part;
+                carBodyPartsList.append(carBodyPartsListItem);
+                console.log(part);
+            });
+        };
+        const taskWrapper = createWrapper();
+        taskWrapper.append(literalTypesTask3Label, carBodyPartsList);
+        container.append(taskWrapper);
+        printBreeds(breedsArr);
     }
     console.groupEnd();
 }

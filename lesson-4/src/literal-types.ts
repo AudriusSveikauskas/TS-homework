@@ -20,6 +20,7 @@ console.group('Literal types - užduotys');
   type Munich = 'Munich';
   type Cologne = 'Cologne';
   type Frankfurt = 'Frankfurt';
+
   type BiggestGermanyCities = Berlin | Hamburg | Munich | Cologne | Frankfurt;
 
   type LabradorRetriever = 'Labrador Retriever';
@@ -27,12 +28,21 @@ console.group('Literal types - užduotys');
   type GermanShepherd = 'German Shepherd';
   type GoldenRetriever = 'Golden Retriever';
   type Bulldog = 'Bulldog';
+
   type MostPopularDogBreeds =
     | LabradorRetriever
     | FrenchBulldog
     | GermanShepherd
     | GoldenRetriever
     | Bulldog;
+
+  type Hood = 'Hood';
+  type FrontBumper = 'Front Bumper';
+  type RearBumper = 'Rear Bumper';
+  type Spoiler = 'Spoiler';
+  type Fender = 'Fender';
+
+  type CarBodyParts = Hood | FrontBumper | RearBumper | Spoiler | Fender;
 
   console.group(
     '1. Sukurkite konkrečius 5 dižiausių Vokietijos miestų tipus. Sukurkite tipą, kurio reikšmė būtų viena iš miestų.',
@@ -109,7 +119,35 @@ console.group('Literal types - užduotys');
     '3. Sukurkite konkrečias 5 mašinos dalių tipus. Sukurkite tipą, kurio reikšmė būtų viena iš dalių.',
   );
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia
+    const literalTypesTask3Label = document.createElement('label');
+    literalTypesTask3Label.setAttribute('for', 'literal-parts-list');
+    literalTypesTask3Label.textContent = 'task 3';
+
+    const carBodyPartsList = document.createElement('ul');
+    carBodyPartsList.setAttribute('id', 'literal-parts-list');
+
+    const part1: CarBodyParts = 'Hood';
+    const part2: CarBodyParts = 'Front Bumper';
+    const part3: CarBodyParts = 'Rear Bumper';
+    const part4: CarBodyParts = 'Spoiler';
+    const part5: CarBodyParts = 'Fender';
+
+    const breedsArr = [part1, part2, part3, part4, part5];
+
+    const printBreeds = (arr: CarBodyParts[]): void => {
+      arr.forEach((part) => {
+        const carBodyPartsListItem = document.createElement('li');
+        carBodyPartsListItem.textContent = part;
+        carBodyPartsList.append(carBodyPartsListItem);
+        console.log(part);
+      });
+    };
+
+    const taskWrapper = createWrapper();
+    taskWrapper.append(literalTypesTask3Label, carBodyPartsList);
+    container.append(taskWrapper);
+
+    printBreeds(breedsArr);
   }
   console.groupEnd();
 }
