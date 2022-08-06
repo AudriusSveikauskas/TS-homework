@@ -45,6 +45,23 @@ console.group('Tuples - užduotys');
   const ownerAndDog4: OwnerAndDog = [owner4, dog4];
   const ownerAndDog5: OwnerAndDog = [owner5, dog5];
 
+  type Vertice = [number, number];
+  type Triangle = [Vertice, Vertice, Vertice];
+
+  const vertice1: Vertice = [3, 7];
+  const vertice2: Vertice = [10, 1];
+  const vertice3: Vertice = [5, 5];
+  const vertice4: Vertice = [6, 8];
+  const vertice5: Vertice = [3, 6];
+  const vertice6: Vertice = [9, 1];
+  const vertice7: Vertice = [8, 8];
+  const vertice8: Vertice = [2, 3];
+  const vertice9: Vertice = [9, 4];
+
+  const triangle1: Triangle = [vertice1, vertice2, vertice3];
+  const triangle2: Triangle = [vertice4, vertice5, vertice6];
+  const triangle3: Triangle = [vertice7, vertice8, vertice9];
+
   console.group('1. Sukurkite žmogaus vardo ir amžiaus rinkinį');
   {
     const tuplesTask1Label = document.createElement('label');
@@ -113,7 +130,31 @@ console.group('Tuples - užduotys');
     '3. Sukurkite trikampio taškų 2D erdvėje rinkinį(pradžioje teks sukurti 2D Taško tipą)',
   );
   {
-    // sprendimo pavyzdžius spausdinkite čia
+    const tuplesTask3Label = document.createElement('label');
+    tuplesTask3Label.setAttribute('for', 'tuples-triangle-list');
+    tuplesTask3Label.textContent = 'task 3';
+
+    const triangleList = document.createElement('ul');
+    triangleList.setAttribute('id', 'tuples-triangle-list');
+
+    const trianglesArr: Triangle[] = [triangle1, triangle2, triangle3];
+
+    const printTriangles = (arr: Triangle[]): void => {
+      arr.forEach((triangle) => {
+        const triangleListItem = document.createElement('li');
+        triangleListItem.textContent = `A (${triangle[0][0]}, ${triangle[0][1]}), B (${triangle[1][0]}, ${triangle[1][1]}), C (${triangle[2][0]}, ${triangle[2][1]})`;
+        triangleList.append(triangleListItem);
+        console.log(
+          `A (${triangle[0][0]}, ${triangle[0][1]}), B (${triangle[1][0]}, ${triangle[1][1]}), C (${triangle[2][0]}, ${triangle[2][1]})`,
+        );
+      });
+    };
+
+    const taskWrapper = createWrapper();
+    taskWrapper.append(tuplesTask3Label, triangleList);
+    container.append(taskWrapper);
+
+    printTriangles(trianglesArr);
   }
   console.groupEnd();
 }
