@@ -35,6 +35,16 @@ console.group('Enum - užduotys');
 
   type PopulationKeys = keyof typeof CountriesHighestPopulation;
 
+  enum CountriesGDP {
+    USA = 1,
+    China,
+    Japan,
+    Germany,
+    UK,
+  }
+
+  type GDPKeys = keyof typeof CountriesGDP;
+
   console.group('1. Sukurkite 5 didžiausių Lietuvos miestų išvardinimą.');
   {
     const enumsTask1Label = document.createElement('label');
@@ -95,7 +105,28 @@ console.group('Enum - užduotys');
     '3. Sukurkite 5 šalių su didžiausiu BVP skaitinį išvardinimą pradedant "1".',
   );
   {
-    // sprendimą|sprendimo pavyzdžius spausdinkite čia
+    const enumsTask3Label = document.createElement('label');
+    enumsTask3Label.setAttribute('for', 'enums-gdp-list');
+    enumsTask3Label.textContent = 'task 3';
+
+    const biggestGDPCountriesList = document.createElement('ul');
+    biggestGDPCountriesList.setAttribute('id', 'enums-gdp-list');
+
+    const printCountries = (key: GDPKeys): void => {
+      const biggestGDPCountriesListItem = document.createElement('li');
+      biggestGDPCountriesListItem.textContent = `${CountriesGDP[key]} (${key})`;
+      biggestGDPCountriesList.append(biggestGDPCountriesListItem);
+      console.log(CountriesGDP[key]);
+    };
+
+    const keysArr = ['USA', 'China', 'Japan', 'Germany', 'UK'];
+    keysArr.forEach((key) => {
+      printCountries(key as GDPKeys);
+    });
+
+    const taskWrapper = createWrapper();
+    taskWrapper.append(enumsTask3Label, biggestGDPCountriesList);
+    container.append(taskWrapper);
   }
   console.groupEnd();
 }

@@ -26,6 +26,14 @@ console.group('Enum - užduotys');
         CountriesHighestPopulation[CountriesHighestPopulation["Indonesia"] = 3] = "Indonesia";
         CountriesHighestPopulation[CountriesHighestPopulation["Pakistan"] = 4] = "Pakistan";
     })(CountriesHighestPopulation || (CountriesHighestPopulation = {}));
+    let CountriesGDP;
+    (function (CountriesGDP) {
+        CountriesGDP[CountriesGDP["USA"] = 1] = "USA";
+        CountriesGDP[CountriesGDP["China"] = 2] = "China";
+        CountriesGDP[CountriesGDP["Japan"] = 3] = "Japan";
+        CountriesGDP[CountriesGDP["Germany"] = 4] = "Germany";
+        CountriesGDP[CountriesGDP["UK"] = 5] = "UK";
+    })(CountriesGDP || (CountriesGDP = {}));
     console.group('1. Sukurkite 5 didžiausių Lietuvos miestų išvardinimą.');
     {
         const enumsTask1Label = document.createElement('label');
@@ -72,6 +80,24 @@ console.group('Enum - užduotys');
     console.groupEnd();
     console.group('3. Sukurkite 5 šalių su didžiausiu BVP skaitinį išvardinimą pradedant "1".');
     {
+        const enumsTask3Label = document.createElement('label');
+        enumsTask3Label.setAttribute('for', 'enums-gdp-list');
+        enumsTask3Label.textContent = 'task 3';
+        const biggestGDPCountriesList = document.createElement('ul');
+        biggestGDPCountriesList.setAttribute('id', 'enums-gdp-list');
+        const printCountries = (key) => {
+            const biggestGDPCountriesListItem = document.createElement('li');
+            biggestGDPCountriesListItem.textContent = `${CountriesGDP[key]} (${key})`;
+            biggestGDPCountriesList.append(biggestGDPCountriesListItem);
+            console.log(CountriesGDP[key]);
+        };
+        const keysArr = ['USA', 'China', 'Japan', 'Germany', 'UK'];
+        keysArr.forEach((key) => {
+            printCountries(key);
+        });
+        const taskWrapper = createWrapper();
+        taskWrapper.append(enumsTask3Label, biggestGDPCountriesList);
+        container.append(taskWrapper);
     }
     console.groupEnd();
 }
