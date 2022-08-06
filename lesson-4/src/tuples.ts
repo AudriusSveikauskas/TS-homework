@@ -2,13 +2,51 @@
 
 console.group('Tuples - užduotys');
 {
-  // ↓↓↓↓ Tipus apraškite čia ↓↓↓↓
+  const container = document.getElementById('container') as HTMLDivElement;
 
-  // ↑↑↑↑ Tipus apraškite čia ↑↑↑↑
+  const taskTitle = document.createElement('h3');
+  taskTitle.textContent = 'tuples.ts';
+
+  container.append(taskTitle);
+
+  const createWrapper = (): HTMLDivElement => {
+    const taskWrapper = document.createElement('div');
+    taskWrapper.classList.add('task-wrapper');
+    return taskWrapper;
+  };
+
+  type HomoSapiens = [string, number];
+
+  const darius: HomoSapiens = ['Darius', 35];
+  const ona: HomoSapiens = ['Ona', 26];
+  const jonas: HomoSapiens = ['Jonas', 48];
+  const vilma: HomoSapiens = ['Vilma', 55];
 
   console.group('1. Sukurkite žmogaus vardo ir amžiaus rinkinį');
   {
-    // sprendimo pavyzdžius spausdinkite čia
+    const tuplesTask1Label = document.createElement('label');
+    tuplesTask1Label.setAttribute('for', 'tuples-homo-sapiens-list');
+    tuplesTask1Label.textContent = 'task 1';
+
+    const homoSapiensList = document.createElement('ul');
+    homoSapiensList.setAttribute('id', 'tuples-homo-sapiens-list');
+
+    const homoSapiensArr: HomoSapiens[] = [darius, ona, jonas, vilma];
+
+    const printHumans = (arr: HomoSapiens[]): void => {
+      arr.forEach((human) => {
+        const homoSapiensListItem = document.createElement('li');
+        homoSapiensListItem.textContent = `${human[0]} (${human[1]})`;
+        homoSapiensList.append(homoSapiensListItem);
+        console.log(`${human[0]} (${human[1]})`);
+      });
+    };
+
+    const taskWrapper = createWrapper();
+    taskWrapper.append(tuplesTask1Label, homoSapiensList);
+    container.append(taskWrapper);
+
+    printHumans(homoSapiensArr);
   }
   console.groupEnd();
 
