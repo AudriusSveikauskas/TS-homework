@@ -254,7 +254,10 @@ console.group(
   '12. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo teigiamų elementų',
 );
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
+  const filterPositiveNumbers = (arr: number[]): number[] => arr.filter((num) => num >= 0);
+
+  console.log(filterPositiveNumbers(numbersArr));
 }
 console.groupEnd();
 
@@ -262,7 +265,10 @@ console.group(
   '13. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo NE-teigiamų elementų',
 );
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
+  const filterNegativeNumbers = (arr: number[]): number[] => arr.filter((num) => num < 0);
+
+  console.log(filterNegativeNumbers(numbersArr));
 }
 console.groupEnd();
 
