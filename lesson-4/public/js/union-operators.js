@@ -25,9 +25,17 @@ console.group('Union operators - užduotys');
         address: 'Molo g. 27-15, Klaipėda 92277',
         price: 52_300,
     };
+    const accommodationsArr = [
+        accommodation1,
+        accommodation2,
+        accommodation3,
+    ];
     const car1 = { type: 'Automatic', brand: 'BMW', model: '750Li' };
     const car2 = { type: 'Automatic', brand: 'Audi', model: 'A8' };
     const car3 = { type: 'Manual', brand: 'Subaru', model: 'Impreza' };
+    const carsArr = [car1, car2, car3];
+    const wealth1 = accommodationsArr;
+    const wealth2 = carsArr;
     console.group('1. Aprašykite objekto tipą Accommodation, kurio savybė "type" būtų, "House" arba "Flat"');
     {
         const unionTask1Label = document.createElement('label');
@@ -35,11 +43,6 @@ console.group('Union operators - užduotys');
         unionTask1Label.textContent = 'task 1';
         const accommodationsList = document.createElement('ul');
         accommodationsList.setAttribute('id', 'union-accommodation-list');
-        const accommodationsArr = [
-            accommodation1,
-            accommodation2,
-            accommodation3,
-        ];
         const printHumans = (arr) => {
             arr.forEach((accommodation) => {
                 const { type, address, price } = accommodation;
@@ -62,7 +65,6 @@ console.group('Union operators - užduotys');
         unionTask2Label.textContent = 'task 2';
         const carsList = document.createElement('ul');
         carsList.setAttribute('id', 'union-car-list');
-        const carsArr = [car1, car2, car3];
         const printCars = (arr) => {
             arr.forEach((car) => {
                 const { type, brand, model } = car;
@@ -80,6 +82,26 @@ console.group('Union operators - užduotys');
     console.groupEnd();
     console.group('3. Aprašykite tipą, kuris kintamajam leistų būti: arba Accommodation masyvu, arba Car masyvu');
     {
+        const unionTask3Label = document.createElement('label');
+        unionTask3Label.setAttribute('for', 'union-wealth-list');
+        unionTask3Label.textContent = 'task 3';
+        const wealthList = document.createElement('ul');
+        wealthList.setAttribute('id', 'union-wealth-list');
+        const wealthArr = [wealth1, wealth2];
+        const printHumans = (arr) => {
+            arr.forEach((wealth) => {
+                wealth.forEach((obj) => {
+                    const wealthListItem = document.createElement('li');
+                    wealthListItem.textContent = JSON.stringify(obj);
+                    wealthList.append(wealthListItem);
+                    console.log(obj);
+                });
+            });
+        };
+        const taskWrapper = createWrapper();
+        taskWrapper.append(unionTask3Label, wealthList);
+        container.append(taskWrapper);
+        printHumans(wealthArr);
     }
     console.groupEnd();
 }
