@@ -15,6 +15,7 @@ console.group('Enum - užduotys');
     return taskWrapper;
   };
 
+  // TASK 1
   enum BiggestLtCities {
     Vilnius = 'Vilnius',
     Kaunas = 'Kaunas',
@@ -25,6 +26,7 @@ console.group('Enum - užduotys');
 
   type CityKeys = keyof typeof BiggestLtCities;
 
+  // TASK 2
   enum CountriesHighestPopulation {
     China,
     India,
@@ -35,6 +37,7 @@ console.group('Enum - užduotys');
 
   type PopulationKeys = keyof typeof CountriesHighestPopulation;
 
+  // TASK 3
   enum CountriesGDP {
     USA = 1,
     China,

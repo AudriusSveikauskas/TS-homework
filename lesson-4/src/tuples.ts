@@ -15,6 +15,7 @@ console.group('Tuples - užduotys');
     return taskWrapper;
   };
 
+  // TASK 1
   type HomoSapiens = [string, number];
 
   const darius: HomoSapiens = ['Darius', 35];
@@ -22,6 +23,7 @@ console.group('Tuples - užduotys');
   const jonas: HomoSapiens = ['Jonas', 48];
   const vilma: HomoSapiens = ['Vilma', 55];
 
+  // TASK 2
   type Owner = [string, string];
   type Dog = [string, number];
 
@@ -45,6 +47,7 @@ console.group('Tuples - užduotys');
   const ownerAndDog4: OwnerAndDog = [owner4, dog4];
   const ownerAndDog5: OwnerAndDog = [owner5, dog5];
 
+  // TASK 3
   type Vertice = [number, number];
   type Triangle = [Vertice, Vertice, Vertice];
 

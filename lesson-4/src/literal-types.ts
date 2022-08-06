@@ -15,6 +15,7 @@ console.group('Literal types - užduotys');
     return taskWrapper;
   };
 
+  // TASK 1
   type Berlin = 'Berlin';
   type Hamburg = 'Hamburg';
   type Munich = 'Munich';
@@ -23,6 +24,7 @@ console.group('Literal types - užduotys');
 
   type BiggestGermanyCities = Berlin | Hamburg | Munich | Cologne | Frankfurt;
 
+  // TASK 2
   type LabradorRetriever = 'Labrador Retriever';
   type FrenchBulldog = 'French Bulldog';
   type GermanShepherd = 'German Shepherd';
@@ -36,6 +38,7 @@ console.group('Literal types - užduotys');
     | GoldenRetriever
     | Bulldog;
 
+  // TASK 3
   type Hood = 'Hood';
   type FrontBumper = 'Front Bumper';
   type RearBumper = 'Rear Bumper';
