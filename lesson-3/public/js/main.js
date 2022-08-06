@@ -164,10 +164,16 @@ console.group('13. Sukurkite funkciją, kuri priima skaičių masyvą ir grąži
 console.groupEnd();
 console.group('14. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo lyginių elementų');
 {
+    const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const filterEvenNumbers = (arr) => arr.filter((num) => !(num % 2));
+    console.log(filterEvenNumbers(numbersArr));
 }
 console.groupEnd();
 console.group('15. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo nelyginių elementų');
 {
+    const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    const filterOddNumbers = (arr) => arr.filter((num) => num % 2);
+    console.log(filterOddNumbers(numbersArr));
 }
 console.groupEnd();
 console.group('16. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo, paverstų teigiamais, elementų');

@@ -270,7 +270,10 @@ console.group(
   '14. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo lyginių elementų',
 );
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const filterEvenNumbers = (arr: number[]): number[] => arr.filter((num) => !(num % 2));
+
+  console.log(filterEvenNumbers(numbersArr));
 }
 console.groupEnd();
 
