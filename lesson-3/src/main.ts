@@ -241,7 +241,10 @@ console.group(
   '10. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo elementų pakeltų kvadratu',
 );
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
+  const squareItems = (arr: number[]): number[] => arr.map((item) => item ** 2);
+
+  console.log(squareItems(numbersArr));
 }
 console.groupEnd();
 
