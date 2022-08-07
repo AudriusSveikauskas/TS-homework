@@ -64,7 +64,7 @@ console.group('Assertions - užduotys');
     ) as HTMLButtonElement;
     submitBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      assertionTask2Div.textContent += '😎';
+      assertionTask2Div.textContent += '👽';
     });
   }
   console.groupEnd();

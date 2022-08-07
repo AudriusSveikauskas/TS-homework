@@ -79,9 +79,6 @@ console.groupEnd();
 console.group(
   '4. Parašykite funkciją, kuri atspausdina kiekvieno masyvo elemento indekso ir reikšmių poras eilutėmis, tokiu formatu:  ',
 );
-// [0] => reikšmė
-// [1] => reikšmė
-// [2] => reikšmė
 {
   const arrayElementIndexItem = <T>(arr: T[]): void => {
     arr.forEach((item, index) => {

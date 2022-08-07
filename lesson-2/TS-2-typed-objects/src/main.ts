@@ -1,10 +1,5 @@
 /* eslint no-console: ["error", { allow: ["groupCollapsed", "log", "groupEnd", "dir", "group"] }] */
 
-/*
-  Objektų tipai aprašomi aprašant kiekvieną savybę atskirai. Jeigu savybė nėra privaloma,
-  prie savybės pavadinimo rašome klaustuką
-*/
-
 type Person = {
   id: string;
   name: string;

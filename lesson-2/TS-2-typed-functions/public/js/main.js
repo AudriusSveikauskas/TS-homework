@@ -1,21 +1,4 @@
 "use strict";
-const addNumbers = (num1, num2) => num1 + num2;
-const joinStrings = (str1, str2) => `${str1} ${str2}`;
-const createInitials = function createInitials(str1, str2) {
-    return str1[0].toLocaleUpperCase() + str2[0].toLocaleUpperCase();
-};
-const sum = addNumbers(5, 7);
-const joinedString = joinStrings('Penediktas', 'Tušinis');
-const initials = createInitials('Penediktas', 'Tušinis');
-console.log({
-    sum,
-    joinedString,
-    initials,
-});
-function printRedText(text) {
-    console.log(`%c ${text}`, 'color: #ee0000');
-}
-printRedText('printRed funkcijos argumentas');
 console.group('1. Aprašykite funkcijoms tipus jas deklaruojant');
 {
     const multiply = (a, b) => a * b;

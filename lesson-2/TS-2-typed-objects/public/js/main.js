@@ -30,7 +30,7 @@ const printCouple = (p1, p2) => {
 printCouple(person1, person2);
 console.group('1. Sukurkite funkciją kuri patikrina ar žmogus yra pilnametis');
 {
-    const isAdult = (obj) => (obj.age >= 18);
+    const isAdult = (obj) => obj.age >= 18;
     console.log({
         [createFullname(person1)]: isAdult(person1),
         [createFullname(person2)]: isAdult(person2),
@@ -40,7 +40,7 @@ console.group('1. Sukurkite funkciją kuri patikrina ar žmogus yra pilnametis')
 console.groupEnd();
 console.group('2. Sukurkite funkciją, kuri patikrina ar Person tipo objektas turi ūgį ir svorį');
 {
-    const isFullyDescribedPerson = (obj) => (!!(obj.height && obj.weight));
+    const isFullyDescribedPerson = (obj) => !!(obj.height && obj.weight);
     console.log({
         [createFullname(person1)]: isFullyDescribedPerson(person1),
         [createFullname(person2)]: isFullyDescribedPerson(person2),

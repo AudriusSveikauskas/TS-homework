@@ -24,9 +24,9 @@ const sortedDrinksArr: Drink[] = drinksArr
   .slice()
   .sort((a, b) => (a.price > b.price ? 1 : -1));
 
-console.log('--- Original Array ---');
+console.log('---- Original Array ----');
 console.dir(drinksArr);
-console.log('--- Sorted Array ---');
+console.log('---- Sorted Array ----');
 console.dir(sortedDrinksArr);
 
 console.groupEnd();

@@ -16,9 +16,9 @@ const drinksArr = [vodka, gin, tequila, water];
 const sortedDrinksArr = drinksArr
     .slice()
     .sort((a, b) => (a.price > b.price ? 1 : -1));
-console.log('--- Original Array ---');
+console.log('---- Original Array ----');
 console.dir(drinksArr);
-console.log('--- Sorted Array ---');
+console.log('---- Sorted Array ----');
 console.dir(sortedDrinksArr);
 console.groupEnd();
 console.group('2 - https://edabit.com/challenge/9KEKJG5PZTFmG3Zau');
