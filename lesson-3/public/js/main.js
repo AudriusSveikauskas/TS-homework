@@ -144,6 +144,9 @@ console.group('8. Parašykite funkciją, kuri atspausdina kiekvieno masyvo eleme
 console.groupEnd();
 console.group('9. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo elementų padaugintų iš 2');
 {
+    const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
+    const multiplyItems = (arr) => arr.map((item) => item * 2);
+    console.log(multiplyItems(numbersArr));
 }
 console.groupEnd();
 console.group('10. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo elementų pakeltų kvadratu');

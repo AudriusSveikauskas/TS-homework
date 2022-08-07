@@ -230,7 +230,10 @@ console.group(
   '9. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo elementų padaugintų iš 2',
 );
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
+  const multiplyItems = (arr: number[]): number[] => arr.map((item) => item * 2);
+
+  console.log(multiplyItems(numbersArr));
 }
 console.groupEnd();
 
