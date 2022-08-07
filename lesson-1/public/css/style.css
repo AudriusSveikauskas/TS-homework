@@ -1,0 +1,20 @@
+.input {
+    display: block;
+    margin: 20px auto;
+    width: 300px;
+    height: 40px;
+    font-size: 1.5rem;
+    text-indent: 1rem;
+}
+
+.label {
+    display: block;
+    margin: 100px auto 0 auto;
+    width: 300px;
+    font-size: 1rem;
+}
+
+.result {
+    display: block;
+    text-align: center;
+}

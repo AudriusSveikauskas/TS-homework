@@ -1,2 +1,4 @@
 // eslint-disable-next-line no-console
-console.log('Sveikas pasauli!');
+const helloWorld = (str: string): void => console.log('Task 1:', str);
+
+helloWorld('sveikas pasauli');
