@@ -158,6 +158,9 @@ console.group('10. Sukurkite funkciją, kuri priima skaičių masyvą ir grąži
 console.groupEnd();
 console.group('11. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo elementų ir jų indeksų sandaugos');
 {
+    const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
+    const multiplyItemsIndex = (arr) => arr.map((item, index) => item * index);
+    console.log(multiplyItemsIndex(numbersArr));
 }
 console.groupEnd();
 console.group('12. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo teigiamų elementų');

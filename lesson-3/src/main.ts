@@ -252,7 +252,10 @@ console.group(
   '11. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo elementų ir jų indeksų sandaugos',
 );
 {
-  // Užduoties sprendimas ir užduoties sprendimo atspausdinimas su duomenimis
+  const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
+  const multiplyItemsIndex = (arr: number[]): number[] => arr.map((item, index) => item * index);
+
+  console.log(multiplyItemsIndex(numbersArr));
 }
 console.groupEnd();
 
