@@ -1,20 +1,4 @@
 "use strict";
-const height = 175.0;
-const weight = 78.2;
-const fullname = 'Serbentautas';
-const surname = 'Bordiūras';
-const age = 19;
-const wife = null;
-const innerAnimal = undefined;
-console.log({
-    height: [height, typeof height],
-    weight: [weight, typeof weight],
-    fullname: [fullname, typeof fullname],
-    surname: [surname, typeof surname],
-    age: [age, typeof age],
-    wife: [wife, typeof wife],
-    innerAnimal: [innerAnimal, typeof innerAnimal],
-});
 console.group('1. Priskirkite kintamiesiems duomenų tipus');
 {
     const title = 'Vermontas';

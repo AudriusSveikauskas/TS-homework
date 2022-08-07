@@ -1,34 +1,4 @@
 /* eslint no-console: ["error", { allow: ["groupCollapsed", "log", "groupEnd", "dir", "group"] }] */
-
-/*
-TypeScript'e galioja tie patys primityvūs duomenų tipai kaip ir JavaScript'e:
-  * string - simbolių darinys
-  * number - skaičius
-  * boolean - loginis kintamasis
-  * null - tipas pasakantis, kad reikėmės/nuorodos nėra
-  * undefined - neapibrėžtas tipas
-  * symbol - skirtas unikalioms reikšmėms kurtis - šio kurso metu jo nenagrinėsime
-*/
-
-// Kuriant kintamuosius, reikia šiuos tipus priskirti kintamiesiems:
-const height: number = 175.0;
-const weight: number = 78.2;
-const fullname: string = 'Serbentautas';
-const surname: string = 'Bordiūras';
-const age: number = 19;
-const wife: null = null;
-const innerAnimal: undefined = undefined;
-
-console.log({
-  height: [height, typeof height],
-  weight: [weight, typeof weight],
-  fullname: [fullname, typeof fullname],
-  surname: [surname, typeof surname],
-  age: [age, typeof age],
-  wife: [wife, typeof wife],
-  innerAnimal: [innerAnimal, typeof innerAnimal],
-});
-
 console.group('1. Priskirkite kintamiesiems duomenų tipus');
 {
   const title: string = 'Vermontas';
