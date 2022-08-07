@@ -233,7 +233,7 @@ console.group(
   const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
   const multiplyItems = (arr: number[]): number[] => arr.map((item) => item * 2);
 
-  console.log(multiplyItems(numbersArr));
+  console.log('Original array: [-9, 5, -7, -3, 0, -1, -2], result:', multiplyItems(numbersArr));
 }
 console.groupEnd();
 
@@ -244,7 +244,7 @@ console.group(
   const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
   const squareItems = (arr: number[]): number[] => arr.map((item) => item ** 2);
 
-  console.log(squareItems(numbersArr));
+  console.log('Original array: [-9, 5, -7, -3, 0, -1, -2], result:', squareItems(numbersArr));
 }
 console.groupEnd();
 
@@ -255,7 +255,7 @@ console.group(
   const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
   const multiplyItemsIndex = (arr: number[]): number[] => arr.map((item, index) => item * index);
 
-  console.log(multiplyItemsIndex(numbersArr));
+  console.log('Original array: [-9, 5, -7, -3, 0, -1, -2], result:', multiplyItemsIndex(numbersArr));
 }
 console.groupEnd();
 
@@ -266,7 +266,7 @@ console.group(
   const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
   const filterPositiveNumbers = (arr: number[]): number[] => arr.filter((num) => num >= 0);
 
-  console.log(filterPositiveNumbers(numbersArr));
+  console.log('Original array: [-9, 5, -7, -3, 0, -1, -2], result:', filterPositiveNumbers(numbersArr));
 }
 console.groupEnd();
 
@@ -277,7 +277,7 @@ console.group(
   const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
   const filterNegativeNumbers = (arr: number[]): number[] => arr.filter((num) => num < 0);
 
-  console.log(filterNegativeNumbers(numbersArr));
+  console.log('Original array: [-9, 5, -7, -3, 0, -1, -2], result:', filterNegativeNumbers(numbersArr));
 }
 console.groupEnd();
 
@@ -288,7 +288,7 @@ console.group(
   const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const filterEvenNumbers = (arr: number[]): number[] => arr.filter((num) => !(num % 2));
 
-  console.log(filterEvenNumbers(numbersArr));
+  console.log('Original array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], result:', filterEvenNumbers(numbersArr));
 }
 console.groupEnd();
 
@@ -299,7 +299,7 @@ console.group(
   const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const filterOddNumbers = (arr: number[]): number[] => arr.filter((num) => num % 2);
 
-  console.log(filterOddNumbers(numbersArr));
+  console.log('Original array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], result:', filterOddNumbers(numbersArr));
 }
 console.groupEnd();
 
@@ -310,6 +310,6 @@ console.group(
   const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
   const makeNumbersPositive = (arr: number[]): number[] => arr.map((num) => Math.abs(num));
 
-  console.log(makeNumbersPositive(numbersArr));
+  console.log('Original array: [-9, 5, -7, -3, 0, -1, -2], result:', makeNumbersPositive(numbersArr));
 }
 console.groupEnd();

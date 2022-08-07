@@ -146,56 +146,56 @@ console.group('9. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžin
 {
     const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
     const multiplyItems = (arr) => arr.map((item) => item * 2);
-    console.log(multiplyItems(numbersArr));
+    console.log('Original array: [-9, 5, -7, -3, 0, -1, -2], result:', multiplyItems(numbersArr));
 }
 console.groupEnd();
 console.group('10. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo elementų pakeltų kvadratu');
 {
     const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
     const squareItems = (arr) => arr.map((item) => item ** 2);
-    console.log(squareItems(numbersArr));
+    console.log('Original array: [-9, 5, -7, -3, 0, -1, -2], result:', squareItems(numbersArr));
 }
 console.groupEnd();
 console.group('11. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo elementų ir jų indeksų sandaugos');
 {
     const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
     const multiplyItemsIndex = (arr) => arr.map((item, index) => item * index);
-    console.log(multiplyItemsIndex(numbersArr));
+    console.log('Original array: [-9, 5, -7, -3, 0, -1, -2], result:', multiplyItemsIndex(numbersArr));
 }
 console.groupEnd();
 console.group('12. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo teigiamų elementų');
 {
     const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
     const filterPositiveNumbers = (arr) => arr.filter((num) => num >= 0);
-    console.log(filterPositiveNumbers(numbersArr));
+    console.log('Original array: [-9, 5, -7, -3, 0, -1, -2], result:', filterPositiveNumbers(numbersArr));
 }
 console.groupEnd();
 console.group('13. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo NE-teigiamų elementų');
 {
     const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
     const filterNegativeNumbers = (arr) => arr.filter((num) => num < 0);
-    console.log(filterNegativeNumbers(numbersArr));
+    console.log('Original array: [-9, 5, -7, -3, 0, -1, -2], result:', filterNegativeNumbers(numbersArr));
 }
 console.groupEnd();
 console.group('14. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo lyginių elementų');
 {
     const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const filterEvenNumbers = (arr) => arr.filter((num) => !(num % 2));
-    console.log(filterEvenNumbers(numbersArr));
+    console.log('Original array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], result:', filterEvenNumbers(numbersArr));
 }
 console.groupEnd();
 console.group('15. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo nelyginių elementų');
 {
     const numbersArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     const filterOddNumbers = (arr) => arr.filter((num) => num % 2);
-    console.log(filterOddNumbers(numbersArr));
+    console.log('Original array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10], result:', filterOddNumbers(numbersArr));
 }
 console.groupEnd();
 console.group('16. Sukurkite funkciją, kuri priima skaičių masyvą ir grąžina naują masyvą sudarytą iš pradinio masyvo, paverstų teigiamais, elementų');
 {
     const numbersArr = [-9, 5, -7, -3, 0, -1, -2];
     const makeNumbersPositive = (arr) => arr.map((num) => Math.abs(num));
-    console.log(makeNumbersPositive(numbersArr));
+    console.log('Original array: [-9, 5, -7, -3, 0, -1, -2], result:', makeNumbersPositive(numbersArr));
 }
 console.groupEnd();
 //# sourceMappingURL=main.js.map
