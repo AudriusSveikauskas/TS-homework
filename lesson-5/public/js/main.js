@@ -101,6 +101,9 @@ console.group('4. Sukurtite masyvą su lytimis ir uždirbamu pinigų kiekiu, pag
 console.groupEnd();
 console.group('5. Sukurtite masyvą su vardais, pavardėmis ir lytimi, pagal pradinį žmonių masyvą');
 {
+    const showPersonNameSurnameGender = ({ name, surname, sex, }) => ({ name, surname, sex });
+    const result = people.map(showPersonNameSurnameGender);
+    console.table(result);
 }
 console.groupEnd();
 console.group('6. Atspausdinkite visus vyrus');

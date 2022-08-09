@@ -182,7 +182,18 @@ console.group(
   '5. Sukurtite masyvą su vardais, pavardėmis ir lytimi, pagal pradinį žmonių masyvą',
 );
 {
-  // ...sprendimas ir spausdinimas
+  type PersonNameSurnameGender = Pick<Person, 'name' | 'surname' | 'sex'>;
+
+  const showPersonNameSurnameGender = ({
+    name,
+    surname,
+    sex,
+  }: Person): PersonNameSurnameGender => ({ name, surname, sex });
+
+  const result: PersonNameSurnameGender[] = people.map(
+    showPersonNameSurnameGender,
+  );
+  console.table(result);
 }
 console.groupEnd();
 
