@@ -1,12 +1,14 @@
+/* eslint no-console: ["error", { allow: ["log", "groupEnd", "group", "table"] }] */
+
 type Person = {
-  readonly name: string,
-  readonly surname: string,
-  readonly sex: 'male' | 'female',
-  age: number,
-  income?: number,
-  married?: boolean,
-  hasCar?: boolean,
-}
+  readonly name: string;
+  readonly surname: string;
+  readonly sex: 'male' | 'female';
+  age: number;
+  income?: number;
+  married?: boolean;
+  hasCar?: boolean;
+};
 
 const people: Person[] = [
   {
@@ -73,22 +75,25 @@ const people: Person[] = [
     * (jeigu reikia aprašome naujus kintamuosius reikalingus sprendimui)
     * Atliekame užduoties sprendimą
     * Spausdiname sprendimo rezultatus
-  
+
   Visas funkcijas ir kintamuosius reikia aprašyti tipais (net jei to ir nereikalauja TS compiler'is)
-    
+
 */
-console.groupCollapsed('1. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {name: string, surname: string} objektu. Naudojant šią funkciją performuokite visą žmonių masyvą');
+console.group(
+  '1. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {name: string, surname: string} objektu. Naudojant šią funkciją performuokite visą žmonių masyvą',
+);
 {
   // Tipai:
   type Identity = {
-    name: Person["name"],
-    surname: Person["surname"],
-  }
+    name: Person['name'];
+    surname: Person['surname'];
+  };
 
   // Funkcijos:
-  const personToIdentity = ({ name, surname }: Person): Identity => {
-    return { name, surname };
-  }
+  const personToIdentity = ({ name, surname }: Person): Identity => ({
+    name,
+    surname,
+  });
 
   // Sprendimas:
   const identities: Identity[] = people.map(personToIdentity);
@@ -99,14 +104,16 @@ console.groupCollapsed('1. Sukurkite funkciją, kuri paverčia žmogaus objektą
 }
 console.groupEnd();
 
-console.groupCollapsed('2. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {married: boolean, hasCar: boolean} objektu. Naudojant šią funkciją performuokite visą žmonių masyvą.');
+console.group(
+  '2. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {married: boolean, hasCar: boolean} objektu. Naudojant šią funkciją performuokite visą žmonių masyvą.',
+);
 {
   // type TaskProps = {
   //   married: NonNullable<Person["married"]>,
   //   hasCar: NonNullable<Person["hasCar"]>,
   // }
 
-  type TaskProps = Pick<Required<Person>, "hasCar" | "married">;
+  type TaskProps = Pick<Required<Person>, 'hasCar' | 'married'>;
 
   const selectTaskProps = ({ married, hasCar }: Person): TaskProps => ({
     married: Boolean(married),
@@ -120,67 +127,92 @@ console.groupCollapsed('2. Sukurkite funkciją, kuri paverčia žmogaus objektą
 }
 console.groupEnd();
 
-console.groupCollapsed('3. Atspausdinkite objektus su visų žmonių vardais, pavardėm bei santuokos statusais');
+console.group(
+  '3. Atspausdinkite objektus su visų žmonių vardais, pavardėm bei santuokos statusais',
+);
+{
+  type TaskProps = Pick<Person, 'name' | 'surname' | 'married'>;
+
+  const selectTaskProps = ({ name, surname, married }: Person): TaskProps => ({
+    name,
+    surname,
+    married: Boolean(married),
+  });
+
+  const result: TaskProps[] = people.map(selectTaskProps);
+  console.log(result);
+}
+console.groupEnd();
+
+console.group(
+  '4. Sukurtite masyvą su lytimis ir uždirbamu pinigų kiekiu, pagal pradinį žmonių masyvą',
+);
 {
   // ...sprendimas ir spausdinimas
 }
 console.groupEnd();
 
-console.groupCollapsed('4. Sukurtite masyvą su lytimis ir uždirbamu pinigų kiekiu, pagal pradinį žmonių masyvą');
+console.group(
+  '5. Sukurtite masyvą su vardais, pavardėmis ir lytimi, pagal pradinį žmonių masyvą',
+);
 {
   // ...sprendimas ir spausdinimas
 }
 console.groupEnd();
 
-console.groupCollapsed('5. Sukurtite masyvą su vardais, pavardėmis ir lytimi, pagal pradinį žmonių masyvą');
+console.group('6. Atspausdinkite visus vyrus');
 {
   // ...sprendimas ir spausdinimas
 }
 console.groupEnd();
 
-console.groupCollapsed('6. Atspausdinkite visus vyrus');
+console.group('7. Atspausdinkite visas moteris');
 {
   // ...sprendimas ir spausdinimas
 }
 console.groupEnd();
 
-console.groupCollapsed('7. Atspausdinkite visas moteris');
+console.group(
+  '8. Atspausdinkite žmonių vardus ir pavardes, kurie turi mašinas',
+);
 {
   // ...sprendimas ir spausdinimas
 }
 console.groupEnd();
 
-console.groupCollapsed('8. Atspausdinkite žmonių vardus ir pavardes, kurie turi mašinas');
+console.group('9. Atspausdinkite žmones kurie yra susituokę');
 {
   // ...sprendimas ir spausdinimas
 }
 console.groupEnd();
 
-console.groupCollapsed('9. Atspausdinkite žmones kurie yra susituokę');
+console.group(
+  '10. Sukurkite objektą, kuriame būtų apskaičiuotas vairuojančių žmonių kiekis pagal lytį',
+);
 {
   // ...sprendimas ir spausdinimas
 }
 console.groupEnd();
 
-console.groupCollapsed('10. Sukurkite objektą, kuriame būtų apskaičiuotas vairuojančių žmonių kiekis pagal lytį');
+console.group(
+  '11. Performuokite žmonių masyvą, jog kiekvieno žmogaus savybė "income", taptų "salary"',
+);
 {
   // ...sprendimas ir spausdinimas
 }
 console.groupEnd();
 
-console.groupCollapsed('11. Performuokite žmonių masyvą, jog kiekvieno žmogaus savybė "income", taptų "salary"');
+console.group(
+  '12. Suformuokite žmonių masyvą, kuriame nebūtų lyties, vardo ir pavardės',
+);
 {
   // ...sprendimas ir spausdinimas
 }
 console.groupEnd();
 
-console.groupCollapsed('12. Suformuokite žmonių masyvą, kuriame nebūtų lyties, vardo ir pavardės');
-{
-  // ...sprendimas ir spausdinimas
-}
-console.groupEnd();
-
-console.groupCollapsed('13. Suformuokite žmonių masyvą, kuriame "name" ir "surname" savybės, būtų pakeistos "fullname" savybe');
+console.group(
+  '13. Suformuokite žmonių masyvą, kuriame "name" ir "surname" savybės, būtų pakeistos "fullname" savybe',
+);
 {
   // ...sprendimas ir spausdinimas
 }
