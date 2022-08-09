@@ -51,7 +51,6 @@ const people = [
         sex: 'female',
         age: 72,
         income: 364,
-        married: false,
         hasCar: false,
     },
 ];
@@ -79,13 +78,18 @@ console.group('2. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {marr
 console.groupEnd();
 console.group('3. Atspausdinkite objektus su visų žmonių vardais, pavardėm bei santuokos statusais');
 {
-    const selectTaskProps = ({ name, surname, married }) => ({
-        name,
-        surname,
-        married: Boolean(married),
-    });
+    const selectTaskProps = ({ name, surname, married }) => {
+        let isMarried;
+        if (typeof married === 'boolean') {
+            isMarried = married;
+        }
+        else {
+            isMarried = 'no data';
+        }
+        return { name, surname, isMarried };
+    };
     const result = people.map(selectTaskProps);
-    console.log(result);
+    console.table(result);
 }
 console.groupEnd();
 console.group('4. Sukurtite masyvą su lytimis ir uždirbamu pinigų kiekiu, pagal pradinį žmonių masyvą');

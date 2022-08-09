@@ -62,7 +62,7 @@ const people: Person[] = [
     sex: 'female',
     age: 72,
     income: 364,
-    married: false,
+    // married: false,
     hasCar: false,
   },
 ];
@@ -131,16 +131,30 @@ console.group(
   '3. Atspausdinkite objektus su visų žmonių vardais, pavardėm bei santuokos statusais',
 );
 {
-  type TaskProps = Pick<Person, 'name' | 'surname' | 'married'>;
+  // type TaskProps = Pick<Person, 'name' | 'surname' | 'married'>;
+  //
+  // const selectTaskProps = ({ name, surname, married }: Person): TaskProps => ({
+  //   name,
+  //   surname,
+  //   married: Boolean(married),
+  // });
 
-  const selectTaskProps = ({ name, surname, married }: Person): TaskProps => ({
-    name,
-    surname,
-    married: Boolean(married),
-  });
+  type TaskProps = Pick<Person, 'name' | 'surname'> & {
+    isMarried: boolean | string;
+  };
+
+  const selectTaskProps = ({ name, surname, married }: Person): TaskProps => {
+    let isMarried: string | boolean;
+    if (typeof married === 'boolean') {
+      isMarried = married;
+    } else {
+      isMarried = 'no data';
+    }
+    return { name, surname, isMarried };
+  };
 
   const result: TaskProps[] = people.map(selectTaskProps);
-  console.log(result);
+  console.table(result);
 }
 console.groupEnd();
 
