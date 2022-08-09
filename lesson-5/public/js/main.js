@@ -78,7 +78,7 @@ console.group('2. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {marr
 console.groupEnd();
 console.group('3. Atspausdinkite objektus su visų žmonių vardais, pavardėm bei santuokos statusais');
 {
-    const selectTaskProps = ({ name, surname, married }) => {
+    const selectTaskProps = ({ name, surname, married, }) => {
         let isMarried;
         if (typeof married === 'boolean') {
             isMarried = married;
@@ -94,6 +94,9 @@ console.group('3. Atspausdinkite objektus su visų žmonių vardais, pavardėm b
 console.groupEnd();
 console.group('4. Sukurtite masyvą su lytimis ir uždirbamu pinigų kiekiu, pagal pradinį žmonių masyvą');
 {
+    const showPersonGenderIncome = ({ sex, income, }) => ({ sex, income: income || 0 });
+    const result = people.map(showPersonGenderIncome);
+    console.table(result);
 }
 console.groupEnd();
 console.group('5. Sukurtite masyvą su vardais, pavardėmis ir lytimi, pagal pradinį žmonių masyvą');

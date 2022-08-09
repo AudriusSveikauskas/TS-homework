@@ -139,11 +139,15 @@ console.group(
   //   married: Boolean(married),
   // });
 
-  type TaskProps = Pick<Person, 'name' | 'surname'> & {
+  type PersonNameSurnameMarried = Pick<Person, 'name' | 'surname'> & {
     isMarried: boolean | string;
   };
 
-  const selectTaskProps = ({ name, surname, married }: Person): TaskProps => {
+  const selectTaskProps = ({
+    name,
+    surname,
+    married,
+  }: Person): PersonNameSurnameMarried => {
     let isMarried: string | boolean;
     if (typeof married === 'boolean') {
       isMarried = married;
@@ -153,7 +157,7 @@ console.group(
     return { name, surname, isMarried };
   };
 
-  const result: TaskProps[] = people.map(selectTaskProps);
+  const result: PersonNameSurnameMarried[] = people.map(selectTaskProps);
   console.table(result);
 }
 console.groupEnd();
@@ -162,7 +166,15 @@ console.group(
   '4. Sukurtite masyvą su lytimis ir uždirbamu pinigų kiekiu, pagal pradinį žmonių masyvą',
 );
 {
-  // ...sprendimas ir spausdinimas
+  type PersonGenderIncome = Pick<Person, 'sex' | 'income'>;
+
+  const showPersonGenderIncome = ({
+    sex,
+    income,
+  }: Person): PersonGenderIncome => ({ sex, income: income || 0 });
+
+  const result: PersonGenderIncome[] = people.map(showPersonGenderIncome);
+  console.table(result);
 }
 console.groupEnd();
 
