@@ -138,6 +138,12 @@ console.group('11. Performuokite žmonių masyvą, jog kiekvieno žmogaus savyb�
 console.groupEnd();
 console.group('12. Suformuokite žmonių masyvą, kuriame nebūtų lyties, vardo ir pavardės');
 {
+    const showPersonFullname = ({ name, surname, ...rest }) => ({
+        fullname: `${name} ${surname}`,
+        ...rest,
+    });
+    const result = people.map(showPersonFullname);
+    console.table(result);
 }
 console.groupEnd();
 console.group('13. Suformuokite žmonių masyvą, kuriame "name" ir "surname" savybės, būtų pakeistos "fullname" savybe');

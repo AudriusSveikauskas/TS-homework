@@ -210,7 +210,7 @@ console.groupEnd();
 
 console.group('7. Atspausdinkite visas moteris');
 {
-  type PersonFemale = Omit<Person, 'sex'> & { sex: 'male' };
+  type PersonFemale = Omit<Person, 'sex'> & { sex: 'female' };
 
   const isPersonFemale = ({ sex }: Person): Boolean => sex === 'female';
 
@@ -255,7 +255,19 @@ console.group(
   '12. Suformuokite žmonių masyvą, kuriame nebūtų lyties, vardo ir pavardės',
 );
 {
-  // ...sprendimas ir spausdinimas
+  type PersonFullname = Omit<Person, 'name' | 'surname'> & { fullname: string };
+
+  const showPersonFullname = ({
+    name,
+    surname,
+    ...rest
+  }: Person): PersonFullname => ({
+    fullname: `${name} ${surname}`,
+    ...rest,
+  });
+
+  const result: PersonFullname[] = people.map(showPersonFullname);
+  console.table(result);
 }
 console.groupEnd();
 
