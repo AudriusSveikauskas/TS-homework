@@ -210,7 +210,14 @@ console.groupEnd();
 
 console.group('7. Atspausdinkite visas moteris');
 {
-  // ...sprendimas ir spausdinimas
+  type PersonFemale = Omit<Person, 'sex'> & { sex: 'male' };
+
+  const isPersonFemale = ({ sex }: Person): Boolean => sex === 'female';
+
+  const result: PersonFemale[] = people.filter(
+    isPersonFemale,
+  ) as PersonFemale[];
+  console.table(result);
 }
 console.groupEnd();
 

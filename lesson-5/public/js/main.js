@@ -115,6 +115,9 @@ console.group('6. Atspausdinkite visus vyrus');
 console.groupEnd();
 console.group('7. Atspausdinkite visas moteris');
 {
+    const isPersonFemale = ({ sex }) => sex === 'female';
+    const result = people.filter(isPersonFemale);
+    console.table(result);
 }
 console.groupEnd();
 console.group('8. Atspausdinkite žmonių vardus ir pavardes, kurie turi mašinas');
