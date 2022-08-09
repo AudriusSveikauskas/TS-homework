@@ -108,6 +108,9 @@ console.group('5. Sukurtite masyvą su vardais, pavardėmis ir lytimi, pagal pra
 console.groupEnd();
 console.group('6. Atspausdinkite visus vyrus');
 {
+    const isPersonMale = ({ sex }) => sex === 'male';
+    const result = people.filter(isPersonMale);
+    console.table(result);
 }
 console.groupEnd();
 console.group('7. Atspausdinkite visas moteris');

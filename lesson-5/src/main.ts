@@ -199,7 +199,12 @@ console.groupEnd();
 
 console.group('6. Atspausdinkite visus vyrus');
 {
-  // ...sprendimas ir spausdinimas
+  type PersonMale = Omit<Person, 'sex'> & { sex: 'male' };
+
+  const isPersonMale = ({ sex }: Person): Boolean => sex === 'male';
+
+  const result: PersonMale[] = people.filter(isPersonMale) as PersonMale[];
+  console.table(result);
 }
 console.groupEnd();
 
