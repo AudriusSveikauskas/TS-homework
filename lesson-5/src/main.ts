@@ -34,6 +34,8 @@ import {
   printHasCarByGender,
   showHasCarByGender,
 } from './task10.js';
+// eslint-disable-next-line import/no-unresolved,import/extensions
+import { printPersonSalary, showPersonSalary } from './task11.js';
 
 // 1. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {name: string, surname: string} objektu.
 // Naudojant šią funkciją performuokite visą žmonių masyvą.
@@ -121,3 +123,10 @@ const personHasCarByGender: PersonHasCarByGender = people.reduce(
 console.log(`\n**** TASK 10 (print total HASCAR by gender) ****
 \n`);
 printHasCarByGender(personHasCarByGender);
+
+// 11. Performuokite žmonių masyvą, jog kiekvieno žmogaus savybė "income", taptų "salary".
+
+const personSalaryArr = people.map((person) => showPersonSalary(person));
+console.log(`\n**** TASK 11 (print SALARY instead of INCOME) ****
+\n`);
+printPersonSalary(personSalaryArr);
