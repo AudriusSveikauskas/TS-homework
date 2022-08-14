@@ -26,6 +26,7 @@ export const showHasCarByGender = (
 };
 
 export const printHasCarByGender = (list: PersonHasCarByGender) => {
+  // eslint-disable-next-line guard-for-in,no-restricted-syntax
   for (const gender in list) {
     console.log(
       `\t${gender[0].toUpperCase() + gender.slice(1).toLowerCase()}: ${

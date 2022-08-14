@@ -1,4 +1,5 @@
-export const showMarried = (arr) => arr.filter((person) => person.married);
+export const showMarried = (arr) => arr
+    .filter((person) => person.married);
 export const printPersonMerried = ({ name, surname }) => {
     console.log(`\t${name} ${surname}`);
 };

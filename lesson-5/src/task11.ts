@@ -16,10 +16,11 @@ export const showPersonSalary = ({ income, ...rest }: Person): PersonSalary => {
   return personWithSalary;
 };
 
-export const printPersonSalary = (arr: PersonSalary[]) =>
-  arr.forEach((person, index) => {
-    console.log(`\n------------ Person ${index} ------------
+export const printPersonSalary = (arr: PersonSalary[]) => arr
+  .forEach((person, index) => {
+    console.log(`\n------------ Person ${index + 1} ------------
     \n`);
+    // eslint-disable-next-line guard-for-in,no-restricted-syntax
     for (const personKey in person) {
       console.log(
         `\t${personKey[0].toUpperCase() + personKey.slice(1).toLowerCase()}: ${

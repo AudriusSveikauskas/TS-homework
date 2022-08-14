@@ -6,8 +6,8 @@ import { Person } from './persons-data.js';
 
 export type PersonMarried = Pick<Person, 'name' | 'surname'>;
 
-export const showMarried = (arr: Person[]): PersonMarried[] =>
-  arr.filter((person) => person.married);
+export const showMarried = (arr: Person[]): PersonMarried[] => arr
+  .filter((person) => person.married);
 
 export const printPersonMerried = ({ name, surname }: PersonMarried) => {
   console.log(`\t${name} ${surname}`);

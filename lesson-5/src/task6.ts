@@ -6,8 +6,8 @@ import { Person } from './persons-data.js';
 
 export type PersonMaleGender = Pick<Person, 'name' | 'surname'>;
 
-export const showMaleGender = (arr: Person[]): PersonMaleGender[] =>
-  arr.filter((person) => person.sex === 'male');
+export const showMaleGender = (arr: Person[]): PersonMaleGender[] => arr
+  .filter((person) => person.sex === 'male');
 
 export const printMaleGenderPerson = ({ name, surname }: PersonMaleGender) => {
   console.log(`\t${name} ${surname}`);

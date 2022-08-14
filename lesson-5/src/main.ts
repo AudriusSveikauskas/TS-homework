@@ -6,42 +6,25 @@ import { printPersonNameSurname, showNameSurname } from './task1.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
 import { printPersonMarriedHasCar, showMarriedHasCarPerson } from './task2.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
-import {
-  printPersonNameSurnameMarried,
-  showNameSurnameMarried,
-} from './task3.js';
+import { printPersonNameSurnameMarried, showNameSurnameMarried } from './task3.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
 import { printPersonGenderIncome, showGenderIncome } from './task4.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
-import {
-  printPersonNameSurnameGender,
-  showNameSurnameGender,
-} from './task5.js';
+import { printPersonNameSurnameGender, showNameSurnameGender } from './task5.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
 import { printMaleGenderPerson, showMaleGender } from './task6.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
 import { printFemaleGenderPerson, showFemaleGender } from './task7.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
-import {
-  printPersonNameSurnameHasCar,
-  showNameSurnameHasCar,
-} from './task8.js';
+import { printPersonNameSurnameHasCar, showNameSurnameHasCar } from './task8.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
 import { printPersonMerried, showMarried } from './task9.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
-import {
-  PersonHasCarByGender,
-  printHasCarByGender,
-  showHasCarByGender,
-} from './task10.js';
+import { PersonHasCarByGender, printHasCarByGender, showHasCarByGender } from './task10.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
 import { printPersonSalary, showPersonSalary } from './task11.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
-import {
-  PersonWithoutNameSurnameGender,
-  printPersonWithoutNameSurnameGender,
-  showPersonWithoutNameSurnameGender,
-} from './task12.js';
+import { printPersonWithoutNameSurnameGender, showPersonWithoutNameSurnameGender } from './task12.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
 import { printPersonFullname, showFullname } from './task13.js';
 
@@ -56,23 +39,17 @@ personNameSurnameArr.forEach((person) => printPersonNameSurname(person));
 // 2. Sukurkite funkciją, kuri paverčia žmogaus objektą {married: boolean, hasCar: boolean} objektu.
 // Naudojant šią funkciją performuokite visą žmonių masyvą.
 
-const personMarriedHasCarArr = people.map((person) =>
-  showMarriedHasCarPerson(person),
-);
+const personMarriedHasCarArr = people.map((person) => showMarriedHasCarPerson(person));
 console.log(`\n**** TASK 2 (print only MARRIED and HASCAR) ****
 \n`);
 personMarriedHasCarArr.forEach((person) => printPersonMarriedHasCar(person));
 
 // 3. Atspausdinkite objektus su visų žmonių vardais, pavardėm bei santuokos statusais.
 
-const personNameSurnameMarriedArr = people.map((person) =>
-  showNameSurnameMarried(person),
-);
+const personNameSurnameMarriedArr = people.map((person) => showNameSurnameMarried(person));
 console.log(`\n**** TASK 3 (print only NAME, SURNAME and MARRIED) ****
 \n`);
-personNameSurnameMarriedArr.forEach((person) =>
-  printPersonNameSurnameMarried(person),
-);
+personNameSurnameMarriedArr.forEach((person) => printPersonNameSurnameMarried(person));
 
 // 4. Sukurtite masyvą su lytimis ir uždirbamu pinigų kiekiu, pagal pradinį žmonių masyvą.
 
@@ -83,14 +60,10 @@ personGenderIncomArr.forEach((person) => printPersonGenderIncome(person));
 
 // 5. Sukurtite masyvą su vardais, pavardėmis ir lytimi, pagal pradinį žmonių masyvą.
 
-const personNameSurnameGenderArr = people.map((person) =>
-  showNameSurnameGender(person),
-);
+const personNameSurnameGenderArr = people.map((person) => showNameSurnameGender(person));
 console.log(`\n**** TASK 5 (print only NAME, SURNAME and GENDER) ****
 \n`);
-personNameSurnameGenderArr.forEach((person) =>
-  printPersonNameSurnameGender(person),
-);
+personNameSurnameGenderArr.forEach((person) => printPersonNameSurnameGender(person));
 
 // 6. Atspausdinkite visus vyrus.
 
@@ -111,9 +84,7 @@ personFemaleGenderArr.forEach((person) => printFemaleGenderPerson(person));
 const personNameSurnameHasCarArr = showNameSurnameHasCar(people);
 console.log(`\n**** TASK 8 (print only HASCAR persons) ****
 \n`);
-personNameSurnameHasCarArr.forEach((person) =>
-  printPersonNameSurnameHasCar(person),
-);
+personNameSurnameHasCarArr.forEach((person) => printPersonNameSurnameHasCar(person));
 
 // 9. Atspausdinkite žmones kurie yra susituokę.
 
@@ -141,9 +112,9 @@ printPersonSalary(personSalaryArr);
 
 // 12. Suformuokite žmonių masyvą, kuriame nebūtų lyties, vardo ir pavardės.
 
-const personWithoutNameSurnameGender = people.map((person) =>
-  showPersonWithoutNameSurnameGender(person),
-);
+const personWithoutNameSurnameGender = people.map((
+  person,
+) => showPersonWithoutNameSurnameGender(person));
 console.log(`\n**** TASK 12 (print PERSON without NAME, SURNAME and SEX) ****
 \n`);
 printPersonWithoutNameSurnameGender(personWithoutNameSurnameGender);

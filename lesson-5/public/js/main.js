@@ -1,16 +1,16 @@
 import { people } from './persons-data.js';
 import { printPersonNameSurname, showNameSurname } from './task1.js';
 import { printPersonMarriedHasCar, showMarriedHasCarPerson } from './task2.js';
-import { printPersonNameSurnameMarried, showNameSurnameMarried, } from './task3.js';
+import { printPersonNameSurnameMarried, showNameSurnameMarried } from './task3.js';
 import { printPersonGenderIncome, showGenderIncome } from './task4.js';
-import { printPersonNameSurnameGender, showNameSurnameGender, } from './task5.js';
+import { printPersonNameSurnameGender, showNameSurnameGender } from './task5.js';
 import { printMaleGenderPerson, showMaleGender } from './task6.js';
 import { printFemaleGenderPerson, showFemaleGender } from './task7.js';
-import { printPersonNameSurnameHasCar, showNameSurnameHasCar, } from './task8.js';
+import { printPersonNameSurnameHasCar, showNameSurnameHasCar } from './task8.js';
 import { printPersonMerried, showMarried } from './task9.js';
-import { printHasCarByGender, showHasCarByGender, } from './task10.js';
+import { printHasCarByGender, showHasCarByGender } from './task10.js';
 import { printPersonSalary, showPersonSalary } from './task11.js';
-import { printPersonWithoutNameSurnameGender, showPersonWithoutNameSurnameGender, } from './task12.js';
+import { printPersonWithoutNameSurnameGender, showPersonWithoutNameSurnameGender } from './task12.js';
 import { printPersonFullname, showFullname } from './task13.js';
 const personNameSurnameArr = people.map((person) => showNameSurname(person));
 console.log(`\n**** TASK 1 (print only NAME and SURNAME) ****
