@@ -26,6 +26,8 @@ import {
   printPersonNameSurnameHasCar,
   showNameSurnameHasCar,
 } from './task8.js';
+// eslint-disable-next-line import/no-unresolved,import/extensions
+import { printPersonMerried, showMarried } from './task9.js';
 
 // 1. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {name: string, surname: string} objektu.
 // Naudojant šią funkciją performuokite visą žmonių masyvą.
@@ -96,3 +98,10 @@ console.log(`\n**** TASK 8 (print only HASCAR persons) ****
 personNameSurnameHasCarArr.forEach((person) =>
   printPersonNameSurnameHasCar(person),
 );
+
+// 9. Atspausdinkite žmones kurie yra susituokę.
+
+const personMarried = showMarried(people);
+console.log(`\n**** TASK 9 (print only MARRIED persons) ****
+\n`);
+personMarried.forEach((person) => printPersonMerried(person));
