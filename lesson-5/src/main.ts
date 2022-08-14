@@ -21,6 +21,11 @@ import {
 import { printMaleGenderPerson, showMaleGender } from './task6.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
 import { printFemaleGenderPerson, showFemaleGender } from './task7.js';
+// eslint-disable-next-line import/no-unresolved,import/extensions
+import {
+  printPersonNameSurnameHasCar,
+  showNameSurnameHasCar,
+} from './task8.js';
 
 // 1. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {name: string, surname: string} objektu.
 // Naudojant šią funkciją performuokite visą žmonių masyvą.
@@ -82,3 +87,12 @@ const personFemaleGenderArr = showFemaleGender(people);
 console.log(`\n**** TASK 7 (print only FEMALE persons) ****
 \n`);
 personFemaleGenderArr.forEach((person) => printFemaleGenderPerson(person));
+
+// 8. Atspausdinkite žmonių vardus ir pavardes, kurie turi mašinas.
+
+const personNameSurnameHasCarArr = showNameSurnameHasCar(people);
+console.log(`\n**** TASK 8 (print only HASCAR persons) ****
+\n`);
+personNameSurnameHasCarArr.forEach((person) =>
+  printPersonNameSurnameHasCar(person),
+);
