@@ -5,6 +5,7 @@ import { printPersonNameSurnameMarried, showNameSurnameMarried, } from './task3.
 import { printPersonGenderIncome, showGenderIncome } from './task4.js';
 import { printPersonNameSurnameGender, showNameSurnameGender, } from './task5.js';
 import { printMaleGenderPerson, showMaleGender } from './task6.js';
+import { printFemaleGenderPerson, showFemaleGender } from './task7.js';
 const personNameSurnameArr = people.map((person) => showNameSurname(person));
 console.log(`\n**** TASK 1 (print only NAME and SURNAME) ****
 \n`);
@@ -29,4 +30,8 @@ const personMaleGenderArr = showMaleGender(people);
 console.log(`\n**** TASK 6 (print only MALE persons) ****
 \n`);
 personMaleGenderArr.forEach((person) => printMaleGenderPerson(person));
+const personFemaleGenderArr = showFemaleGender(people);
+console.log(`\n**** TASK 7 (print only FEMALE persons) ****
+\n`);
+personFemaleGenderArr.forEach((person) => printFemaleGenderPerson(person));
 //# sourceMappingURL=main.js.map

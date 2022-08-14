@@ -19,6 +19,8 @@ import {
 } from './task5.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
 import { printMaleGenderPerson, showMaleGender } from './task6.js';
+// eslint-disable-next-line import/no-unresolved,import/extensions
+import { printFemaleGenderPerson, showFemaleGender } from './task7.js';
 
 // 1. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {name: string, surname: string} objektu.
 // Naudojant šią funkciją performuokite visą žmonių masyvą.
@@ -73,3 +75,10 @@ const personMaleGenderArr = showMaleGender(people);
 console.log(`\n**** TASK 6 (print only MALE persons) ****
 \n`);
 personMaleGenderArr.forEach((person) => printMaleGenderPerson(person));
+
+// 7. Atspausdinkite visas moteris.
+
+const personFemaleGenderArr = showFemaleGender(people);
+console.log(`\n**** TASK 7 (print only FEMALE persons) ****
+\n`);
+personFemaleGenderArr.forEach((person) => printFemaleGenderPerson(person));
