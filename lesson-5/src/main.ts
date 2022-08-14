@@ -12,6 +12,11 @@ import {
 } from './task3.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
 import { printPersonGenderIncome, showGenderIncome } from './task4.js';
+// eslint-disable-next-line import/no-unresolved,import/extensions
+import {
+  printPersonNameSurnameGender,
+  showNameSurnameGender,
+} from './task5.js';
 
 // 1. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {name: string, surname: string} objektu.
 // Naudojant šią funkciją performuokite visą žmonių masyvą.
@@ -48,3 +53,14 @@ const personGenderIncomArr = people.map((person) => showGenderIncome(person));
 console.log(`\n**** TASK 4 (print only GENDER and INCOME) ****
 \n`);
 personGenderIncomArr.forEach((person) => printPersonGenderIncome(person));
+
+// 5. Sukurtite masyvą su vardais, pavardėmis ir lytimi, pagal pradinį žmonių masyvą.
+
+const personNameSurnameGenderArr = people.map((person) =>
+  showNameSurnameGender(person),
+);
+console.log(`\n**** TASK 5 (print only NAME, SURNAME and GENDER) ****
+\n`);
+personNameSurnameGenderArr.forEach((person) =>
+  printPersonNameSurnameGender(person),
+);

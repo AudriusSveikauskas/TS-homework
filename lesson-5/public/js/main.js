@@ -3,6 +3,7 @@ import { printPersonNameSurname, showNameSurname } from './task1.js';
 import { printPersonMarriedHasCar, showMarriedHasCarPerson } from './task2.js';
 import { printPersonNameSurnameMarried, showNameSurnameMarried, } from './task3.js';
 import { printPersonGenderIncome, showGenderIncome } from './task4.js';
+import { printPersonNameSurnameGender, showNameSurnameGender, } from './task5.js';
 const personNameSurnameArr = people.map((person) => showNameSurname(person));
 console.log(`\n**** TASK 1 (print only NAME and SURNAME) ****
 \n`);
@@ -19,4 +20,8 @@ const personGenderIncomArr = people.map((person) => showGenderIncome(person));
 console.log(`\n**** TASK 4 (print only GENDER and INCOME) ****
 \n`);
 personGenderIncomArr.forEach((person) => printPersonGenderIncome(person));
+const personNameSurnameGenderArr = people.map((person) => showNameSurnameGender(person));
+console.log(`\n**** TASK 5 (print only NAME, SURNAME and GENDER) ****
+\n`);
+personNameSurnameGenderArr.forEach((person) => printPersonNameSurnameGender(person));
 //# sourceMappingURL=main.js.map
