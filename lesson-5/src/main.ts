@@ -42,6 +42,8 @@ import {
   printPersonWithoutNameSurnameGender,
   showPersonWithoutNameSurnameGender,
 } from './task12.js';
+// eslint-disable-next-line import/no-unresolved,import/extensions
+import { printPersonFullname, showFullname } from './task13.js';
 
 // 1. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {name: string, surname: string} objektu.
 // Naudojant šią funkciją performuokite visą žmonių masyvą.
@@ -145,3 +147,10 @@ const personWithoutNameSurnameGender = people.map((person) =>
 console.log(`\n**** TASK 12 (print PERSON without NAME, SURNAME and SEX) ****
 \n`);
 printPersonWithoutNameSurnameGender(personWithoutNameSurnameGender);
+
+// 13. Suformuokite žmonių masyvą, kuriame "name" ir "surname" savybės, būtų pakeistos "fullname".
+
+const personFullname = people.map((person) => showFullname(person));
+console.log(`\n**** TASK 13 (print PERSON FULLNAME instead of NAME and SURNAME) ****
+\n`);
+printPersonFullname(personFullname);

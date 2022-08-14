@@ -11,6 +11,7 @@ import { printPersonMerried, showMarried } from './task9.js';
 import { printHasCarByGender, showHasCarByGender, } from './task10.js';
 import { printPersonSalary, showPersonSalary } from './task11.js';
 import { printPersonWithoutNameSurnameGender, showPersonWithoutNameSurnameGender, } from './task12.js';
+import { printPersonFullname, showFullname } from './task13.js';
 const personNameSurnameArr = people.map((person) => showNameSurname(person));
 console.log(`\n**** TASK 1 (print only NAME and SURNAME) ****
 \n`);
@@ -59,4 +60,8 @@ const personWithoutNameSurnameGender = people.map((person) => showPersonWithoutN
 console.log(`\n**** TASK 12 (print PERSON without NAME, SURNAME and SEX) ****
 \n`);
 printPersonWithoutNameSurnameGender(personWithoutNameSurnameGender);
+const personFullname = people.map((person) => showFullname(person));
+console.log(`\n**** TASK 13 (print PERSON FULLNAME instead of NAME and SURNAME) ****
+\n`);
+printPersonFullname(personFullname);
 //# sourceMappingURL=main.js.map
