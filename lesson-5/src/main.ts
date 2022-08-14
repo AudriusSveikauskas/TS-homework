@@ -17,6 +17,8 @@ import {
   printPersonNameSurnameGender,
   showNameSurnameGender,
 } from './task5.js';
+// eslint-disable-next-line import/no-unresolved,import/extensions
+import { printMaleGenderPerson, showMaleGender } from './task6.js';
 
 // 1. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {name: string, surname: string} objektu.
 // Naudojant šią funkciją performuokite visą žmonių masyvą.
@@ -64,3 +66,10 @@ console.log(`\n**** TASK 5 (print only NAME, SURNAME and GENDER) ****
 personNameSurnameGenderArr.forEach((person) =>
   printPersonNameSurnameGender(person),
 );
+
+// 6. Atspausdinkite visus vyrus.
+
+const personMaleGenderArr = showMaleGender(people);
+console.log(`\n**** TASK 6 (print only MALE persons) ****
+\n`);
+personMaleGenderArr.forEach((person) => printMaleGenderPerson(person));
