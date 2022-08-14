@@ -36,6 +36,12 @@ import {
 } from './task10.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
 import { printPersonSalary, showPersonSalary } from './task11.js';
+// eslint-disable-next-line import/no-unresolved,import/extensions
+import {
+  PersonWithoutNameSurnameGender,
+  printPersonWithoutNameSurnameGender,
+  showPersonWithoutNameSurnameGender,
+} from './task12.js';
 
 // 1. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {name: string, surname: string} objektu.
 // Naudojant šią funkciją performuokite visą žmonių masyvą.
@@ -130,3 +136,12 @@ const personSalaryArr = people.map((person) => showPersonSalary(person));
 console.log(`\n**** TASK 11 (print SALARY instead of INCOME) ****
 \n`);
 printPersonSalary(personSalaryArr);
+
+// 12. Suformuokite žmonių masyvą, kuriame nebūtų lyties, vardo ir pavardės.
+
+const personWithoutNameSurnameGender = people.map((person) =>
+  showPersonWithoutNameSurnameGender(person),
+);
+console.log(`\n**** TASK 12 (print PERSON without NAME, SURNAME and SEX) ****
+\n`);
+printPersonWithoutNameSurnameGender(personWithoutNameSurnameGender);
