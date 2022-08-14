@@ -28,6 +28,12 @@ import {
 } from './task8.js';
 // eslint-disable-next-line import/no-unresolved,import/extensions
 import { printPersonMerried, showMarried } from './task9.js';
+// eslint-disable-next-line import/no-unresolved,import/extensions
+import {
+  PersonHasCarByGender,
+  printHasCarByGender,
+  showHasCarByGender,
+} from './task10.js';
 
 // 1. Sukurkite funkciją, kuri paverčia žmogaus objektą -> {name: string, surname: string} objektu.
 // Naudojant šią funkciją performuokite visą žmonių masyvą.
@@ -105,3 +111,13 @@ const personMarried = showMarried(people);
 console.log(`\n**** TASK 9 (print only MARRIED persons) ****
 \n`);
 personMarried.forEach((person) => printPersonMerried(person));
+
+// 10. Sukurkite objektą, kuriame būtų apskaičiuotas vairuojančių žmonių kiekis pagal lytį.
+
+const personHasCarByGender: PersonHasCarByGender = people.reduce(
+  showHasCarByGender,
+  {},
+);
+console.log(`\n**** TASK 10 (print total HASCAR by gender) ****
+\n`);
+printHasCarByGender(personHasCarByGender);
