@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="07da8a9e-154a-4eae-a4ee-63da3efb2efa" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.eslintrc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/lesson-10.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/buisness-licence-person.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/buisness-licence-person.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/business-licence-person.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/business-licence-person.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/employee.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/employee.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/job.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/job.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/person.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/person.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/self-employed-person.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/self-employed-person.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/work-person.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/entities/work-person.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/helpers/format-date.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/helpers/format-date.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/helpers/work-days-per-month.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/helpers/work-days-per-month.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/helpers/workDaysPerMonth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/helpers/workDaysPerMonth.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/main.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/business-licence-person.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/employee.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/job.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/person.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/self-employed-person.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/entities/work-person.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/format-date.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/helpers/work-days-per-month.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tsconfig.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2DSIAai9n4c2ZeGhPOeyqPjWx8v" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "npm",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Users\\Audrius\\AppData\\Roaming\\npm\\node_modules\\prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "D:\\TS-homework\\lesson-10\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\TS-homework\lesson-10\src\entities" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="07da8a9e-154a-4eae-a4ee-63da3efb2efa" name="Changes" comment="" />
+      <created>1660685915370</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1660685915370</updated>
+      <workItem from="1660685916585" duration="673000" />
+      <workItem from="1660712669862" duration="959000" />
+      <workItem from="1660716297952" duration="34765000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+</project>
