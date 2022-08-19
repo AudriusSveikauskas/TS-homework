@@ -1,7 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="07da8a9e-154a-4eae-a4ee-63da3efb2efa" name="Changes" comment="feat: all task done" />
+    <list default="true" id="07da8a9e-154a-4eae-a4ee-63da3efb2efa" name="Changes" comment="feat: 6, 7 and 10 homework">
+      <change afterPath="$PROJECT_DIR$/../lesson-7-classwork/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson-7-classwork/.idea/lesson-7-classwork.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson-7-classwork/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson-7-classwork/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson-7/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson-7/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson-7/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson-7/public/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson-7/public/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../lesson-7/public/js/main.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -66,6 +79,7 @@
       <workItem from="1660712669862" duration="959000" />
       <workItem from="1660716297952" duration="34765000" />
       <workItem from="1660761009705" duration="297000" />
+      <workItem from="1660941034127" duration="133000" />
     </task>
     <task id="LOCAL−00001" summary="feat: all task done">
       <created>1660761065261</created>
@@ -73,7 +87,13 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1660761065261</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="feat: 6, 7 and 10 homework">
+      <created>1660941159924</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1660941159933</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -93,6 +113,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="feat: all task done" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: all task done" />
+    <MESSAGE value="feat: 6, 7 and 10 homework" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: 6, 7 and 10 homework" />
   </component>
 </project>
