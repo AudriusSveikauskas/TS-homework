@@ -91,7 +91,7 @@ class List<T> {
     }
   };
 
-  pop = (data: T) => {
+  push = (data: T) => {
     const newNode = new ListNode(data);
     if (this._head === null) {
       this._head = newNode;
@@ -154,17 +154,17 @@ console.groupEnd();
 
 console.group('4. Sukurkite metodą pridėti elementui į sąrašo galą.');
 
-list1.pop(987);
+list1.push(987);
 
 printTitle('list1.pop(987)');
 printResult(list1);
 
-list2.pop('JavaScript');
+list2.push('JavaScript');
 
 printTitle("list2.pop('JavaScript')");
 printResult(list2);
 
-list3.pop(false);
+list3.push(false);
 
 printTitle('list3.pop(false)');
 printResult(list3);
