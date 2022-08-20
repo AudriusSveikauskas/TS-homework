@@ -89,6 +89,41 @@ console.group('5. Parašykite funkciją, kuri sujungia tokių pat tipų masyvus 
 console.groupEnd();
 console.group('6. Parašykite funkciją, kuri priimtų bet kokią reikšmę ir grąžintų objektą su savybėmis-funkcijomis "setValue" - reikšmei nustatyti ir "getValue" tai reikšmei nustatyti. Funkcijai perduota reikšmė neturi būti pasiekiama tiesiogiai.');
 {
+    const createSetterAndGetter = (initValue) => {
+        let prop = initValue;
+        return {
+            setProp: (newValue) => (prop = newValue),
+            getProp: () => prop,
+        };
+    };
+    const num = 123;
+    const str = 'Summer';
+    const arr = [1, 2, 3, 4, 5];
+    const obj = { username: 'Ghost777', email: 'ghost777@gmail.com' };
+    printTitle('Actions:\n\t\t-> const num = 123;\n\t\t-> const obj1 = createSetterAndGetter(num);\n\t\t-> obj1.getProp();');
+    const obj1 = createSetterAndGetter(num);
+    printResult(obj1.getProp());
+    printTitle('Actions:\n\t\t-> obj1.setProp(321);\n\t\t-> obj1.getProp();');
+    obj1.setProp(321);
+    printResult(obj1.getProp());
+    printTitle("Actions:\n\t\t-> const str = 'Summer';\n\t\t-> const obj2 = createSetterAndGetter(str);\n\t\t-> obj2.getProp();");
+    const obj2 = createSetterAndGetter(str);
+    printResult(obj2.getProp());
+    printTitle("Actions:\n\t\t-> obj2.setProp('Winter');\n\t\t-> obj2.getProp();");
+    obj2.setProp('Winter');
+    printResult(obj2.getProp());
+    printTitle('Actions:\n\t\t-> const arr = [1, 2, 3, 4, 5];\n\t\t-> const obj3 = createSetterAndGetter(arr);\n\t\t-> obj3.getProp();');
+    const obj3 = createSetterAndGetter(arr);
+    printResult(obj3.getProp());
+    printTitle('Actions:\n\t\t-> obj3.setProp([55, 44, 33, 22, 11]);\n\t\t-> obj3.getProp();');
+    obj3.setProp([55, 44, 33, 22, 11]);
+    printResult(obj3.getProp());
+    printTitle("Actions:\n\t\t-> const obj = { username: 'Ghost777', email: 'ghost777@gmail.com' };\n\t\t-> const obj4 = createSetterAndGetter(obj);\n\t\t-> obj4.getProp();");
+    const obj4 = createSetterAndGetter(obj);
+    printResult(obj4.getProp());
+    printTitle("Actions:\n\t\t-> obj4.setProp({ username: '_kraken_', email: 'kraken_@yahoo.com' });\n\t\t-> obj4.getProp();");
+    obj4.setProp({ username: '_kraken_', email: 'kraken_@yahoo.com' });
+    printResult(obj4.getProp());
 }
 console.groupEnd();
 console.group(`
@@ -96,6 +131,14 @@ console.group(`
   Parašykite 2 funkcijas <isStudent> ir <isWorker> skirtas atpažinti koks objektas buvo perduotas.
   Sukūrę tokias funkcijas iteruokite per žmonių masyvą, sugrupuodami elementus pagal tipą`);
 {
+    const isStudent = (person) => {
+        const student = person;
+        return !!(student.university && student.course);
+    };
+    const isWorker = (person) => {
+        const worker = person;
+        return !!worker.avgMonthlyPay;
+    };
     const people = [
         {
             name: 'Atstovė',
@@ -121,5 +164,27 @@ console.group(`
             course: 1,
         },
     ];
+    const groupedPersons = people.reduce((prev, person) => {
+        if (isStudent(person)) {
+            prev.student.push(person);
+            return prev;
+        }
+        if (isWorker(person)) {
+            prev.worker.push(person);
+            return prev;
+        }
+        prev.person.push(person);
+        return prev;
+    }, {
+        person: [],
+        student: [],
+        worker: [],
+    });
+    printTitle('Grouped persons:');
+    printResult(groupedPersons.person);
+    printTitle('Grouped students:');
+    printResult(groupedPersons.student);
+    printTitle('Grouped workers:');
+    printResult(groupedPersons.worker);
 }
 //# sourceMappingURL=main.js.map

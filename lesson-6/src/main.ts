@@ -9,8 +9,7 @@ type PrimitiveType = string | number | boolean;
 */
 
 // Helpers
-const printTitle = <T>(title: T): void =>
-  console.log(`%c\n\t${title}\n`, 'color: #63e6be');
+const printTitle = <T>(title: T): void => console.log(`%c\n\t${title}\n`, 'color: #63e6be');
 const printResult = <T>(result: T): void => console.table(result);
 
 // Data
@@ -111,8 +110,7 @@ console.group(
   '5. Parašykite funkciją, kuri sujungia tokių pat tipų masyvus į vieną masyvą',
 );
 {
-  const joinArrays = <T>(...args: T[][]): T[] =>
-    args.reduce((acc, arr) => acc.concat(arr));
+  const joinArrays = <T>(...args: T[][]): T[] => args.reduce((acc, arr) => acc.concat(arr));
 
   const numArr1 = [1, 2, 3, 4];
   const numArr2 = [5, 6];
@@ -142,6 +140,71 @@ console.group(
   '6. Parašykite funkciją, kuri priimtų bet kokią reikšmę ir grąžintų objektą su savybėmis-funkcijomis "setValue" - reikšmei nustatyti ir "getValue" tai reikšmei nustatyti. Funkcijai perduota reikšmė neturi būti pasiekiama tiesiogiai.',
 );
 {
+  type SetterGetter<T> = {
+    setProp: (newValue: T) => void;
+    getProp: () => T;
+  };
+
+  const createSetterAndGetter = <T>(initValue: T): SetterGetter<T> => {
+    let prop: T = initValue;
+
+    return {
+      // eslint-disable-next-line no-return-assign
+      setProp: (newValue) => (prop = newValue),
+      getProp: () => prop,
+    };
+  };
+
+  const num = 123;
+  const str = 'Summer';
+  const arr = [1, 2, 3, 4, 5];
+  const obj = { username: 'Ghost777', email: 'ghost777@gmail.com' };
+
+  printTitle(
+    'Actions:\n\t\t-> const num = 123;\n\t\t-> const obj1 = createSetterAndGetter(num);\n\t\t-> obj1.getProp();',
+  );
+  const obj1 = createSetterAndGetter(num);
+  printResult(obj1.getProp());
+
+  printTitle('Actions:\n\t\t-> obj1.setProp(321);\n\t\t-> obj1.getProp();');
+  obj1.setProp(321);
+  printResult(obj1.getProp());
+
+  printTitle(
+    "Actions:\n\t\t-> const str = 'Summer';\n\t\t-> const obj2 = createSetterAndGetter(str);\n\t\t-> obj2.getProp();",
+  );
+  const obj2 = createSetterAndGetter(str);
+  printResult(obj2.getProp());
+
+  printTitle(
+    "Actions:\n\t\t-> obj2.setProp('Winter');\n\t\t-> obj2.getProp();",
+  );
+  obj2.setProp('Winter');
+  printResult(obj2.getProp());
+
+  printTitle(
+    'Actions:\n\t\t-> const arr = [1, 2, 3, 4, 5];\n\t\t-> const obj3 = createSetterAndGetter(arr);\n\t\t-> obj3.getProp();',
+  );
+  const obj3 = createSetterAndGetter(arr);
+  printResult(obj3.getProp());
+
+  printTitle(
+    'Actions:\n\t\t-> obj3.setProp([55, 44, 33, 22, 11]);\n\t\t-> obj3.getProp();',
+  );
+  obj3.setProp([55, 44, 33, 22, 11]);
+  printResult(obj3.getProp());
+
+  printTitle(
+    "Actions:\n\t\t-> const obj = { username: 'Ghost777', email: 'ghost777@gmail.com' };\n\t\t-> const obj4 = createSetterAndGetter(obj);\n\t\t-> obj4.getProp();",
+  );
+  const obj4 = createSetterAndGetter(obj);
+  printResult(obj4.getProp());
+
+  printTitle(
+    "Actions:\n\t\t-> obj4.setProp({ username: '_kraken_', email: 'kraken_@yahoo.com' });\n\t\t-> obj4.getProp();",
+  );
+  obj4.setProp({ username: '_kraken_', email: 'kraken_@yahoo.com' });
+  printResult(obj4.getProp());
 }
 console.groupEnd();
 
@@ -164,6 +227,16 @@ console.group(`
 
   type Worker = Person & {
     avgMonthlyPay: number;
+  };
+
+  const isStudent = (person: Person): person is Student => {
+    const student = person as Student;
+    return !!(student.university && student.course);
+  };
+
+  const isWorker = (person: Person): person is Worker => {
+    const worker = person as Worker;
+    return !!worker.avgMonthlyPay;
   };
 
   const people: (Person | Student | Worker)[] = [
@@ -191,4 +264,39 @@ console.group(`
       course: 1,
     },
   ];
+
+  type GroupedPerson = {
+    person: Person[];
+    student: Student[];
+    worker: Worker[];
+  };
+
+  const groupedPersons = people.reduce<GroupedPerson>(
+    (prev, person): GroupedPerson => {
+      if (isStudent(person)) {
+        prev.student.push(person);
+        return prev;
+      }
+      if (isWorker(person)) {
+        prev.worker.push(person);
+        return prev;
+      }
+      prev.person.push(person);
+      return prev;
+    },
+    {
+      person: [],
+      student: [],
+      worker: [],
+    },
+  );
+
+  printTitle('Grouped persons:');
+  printResult(groupedPersons.person);
+
+  printTitle('Grouped students:');
+  printResult(groupedPersons.student);
+
+  printTitle('Grouped workers:');
+  printResult(groupedPersons.worker);
 }
