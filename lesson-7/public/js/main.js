@@ -191,17 +191,6 @@ class List {
         }
     }
 }
-console.log('-------------------------------');
-const list5 = new List();
-list5.push(1);
-list5.push(2);
-list5.push(3);
-list5.push(4);
-list5.push(5);
-list5.splice(1, 2);
-console.log(list5);
-console.log(list5.length);
-console.log('-------------------------------');
 const list1 = new List(777);
 printTitle('List<number> = new List(777)');
 printResult(list1);
@@ -253,4 +242,16 @@ printTitle('Reversed list:');
 list4.reverse();
 list4.forEach(printResult);
 printResult(list4);
+const list5 = new List();
+list5.push(1);
+list5.push(2);
+list5.push(3);
+list5.push(4);
+list5.push(5);
+printTitle('Original list:');
+list5.forEach(printResult);
+printResult(list5);
+printTitle('Action:\n\t-> list5.splice(-2, 1);');
+list5.splice(-2, 1);
+printResult(list5);
 //# sourceMappingURL=main.js.map

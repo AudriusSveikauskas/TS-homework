@@ -255,25 +255,6 @@ class List<T> {
   }
 }
 
-console.log('-------------------------------');
-
-const list5: List<number> = new List();
-
-list5.push(1);
-list5.push(2);
-list5.push(3);
-list5.push(4);
-list5.push(5);
-
-list5.splice(1, 2);
-
-console.log(list5);
-console.log(list5.length);
-
-// list5.splice(10);
-
-console.log('-------------------------------');
-
 const list1: List<number> = new List(777);
 
 printTitle('List<number> = new List(777)');
@@ -347,6 +328,7 @@ list3.forEach(printResult);
 console.groupEnd();
 
 // Bonus
+// Reverse
 
 const list4: List<number> = new List();
 list4.push(1);
@@ -361,3 +343,20 @@ printTitle('Reversed list:');
 list4.reverse();
 list4.forEach(printResult);
 printResult(list4);
+
+// Slice
+
+const list5: List<number> = new List();
+list5.push(1);
+list5.push(2);
+list5.push(3);
+list5.push(4);
+list5.push(5);
+
+printTitle('Original list:');
+list5.forEach(printResult);
+printResult(list5);
+
+printTitle('Action:\n\t-> list5.splice(-2, 1);');
+list5.splice(-2, 1);
+printResult(list5);
