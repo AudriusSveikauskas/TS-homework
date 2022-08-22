@@ -2,8 +2,7 @@
 /* eslint no-underscore-dangle: ["error", { "allowAfterThis": true }] */
 
 // Helpers
-const printTitle = (str: string) =>
-  console.log(`%c\n\t${str}\n`, 'color: #c0eb75; font-size: 14px');
+const printTitle = (str: string) => console.log(`%c\n\t${str}\n`, 'color: #c0eb75; font-size: 14px');
 const printResult = <T>(value: T) => console.table(value);
 
 class Stack<T> {
@@ -242,8 +241,8 @@ class List<T> {
       let current = this._head;
       for (let i = 1; i <= this.length; i += 1) {
         if (
-          i <= this._length - Math.abs(start) ||
-          i > this._length - Math.abs(start) + deleteCount!
+          i <= this._length - Math.abs(start)
+          || i > this._length - Math.abs(start) + deleteCount!
         ) {
           tempList.push(current!.data);
         }
