@@ -57,15 +57,20 @@ console.group('2. Sukurkite sąrašo klasę List');
 class List {
     _head;
     _tail;
+    _length = 0;
     constructor(data) {
         if (data !== undefined) {
             this._head = new ListNode(data);
             this._tail = this._head;
+            this._length = this.length + 1;
         }
         else {
             this._head = null;
             this._tail = null;
         }
+    }
+    get length() {
+        return this._length;
     }
     unshift = (data) => {
         const newNode = new ListNode(data);
@@ -77,6 +82,7 @@ class List {
             newNode.next = this._head;
             this._head = newNode;
         }
+        this._length = this.length + 1;
     };
     push = (data) => {
         const newNode = new ListNode(data);
@@ -88,6 +94,7 @@ class List {
             this._tail.next = newNode;
             this._tail = newNode;
         }
+        this._length = this.length + 1;
     };
     forEach = (callback) => {
         if (this._head === null) {
@@ -107,7 +114,22 @@ class List {
         if (this._head === null) {
             this._tail = null;
         }
+        this._length = this.length - 1;
         return shiftItem;
+    };
+    pop = () => {
+        let current = this._head;
+        let newTail = current;
+        while (current.next !== null) {
+            newTail = current;
+            current = current.next;
+        }
+        this._tail = newTail;
+        this._tail.next = null;
+        if (this._length > 0) {
+            this._length = this.length - 1;
+        }
+        return current;
     };
     reverse = () => {
         const tempStack = new Stack();
@@ -118,7 +140,68 @@ class List {
             this.push(tempStack.pop().data);
         }
     };
+    empty = () => {
+        while (this._head !== null) {
+            this.shift();
+        }
+    };
+    copy = (list) => {
+        list.forEach((n) => {
+            this.push(n);
+        });
+    };
+    splice(start, deleteCount, item) {
+        if (!deleteCount && !item && start >= 0) {
+            while (this._length > start) {
+                this.pop();
+            }
+        }
+        else if (!deleteCount && !item && start < 0) {
+            for (let i = 1; i <= Math.abs(start); i += 1) {
+                this.pop();
+            }
+        }
+        else if (!item && start >= 0) {
+            const tempList = new List();
+            let current = this._head;
+            for (let i = 1; i <= this.length; i += 1) {
+                if (i <= start || i > start + deleteCount) {
+                    tempList.push(current.data);
+                }
+                current = current.next;
+            }
+            while (this._head !== null) {
+                this.shift();
+            }
+            this.empty();
+            this.copy(tempList);
+        }
+        else if (!item && start < 0) {
+            const tempList = new List();
+            let current = this._head;
+            for (let i = 1; i <= this.length; i += 1) {
+                if (i <= this._length - Math.abs(start) ||
+                    i > this._length - Math.abs(start) + deleteCount) {
+                    tempList.push(current.data);
+                }
+                current = current.next;
+            }
+            this.empty();
+            this.copy(tempList);
+        }
+    }
 }
+console.log('-------------------------------');
+const list5 = new List();
+list5.push(1);
+list5.push(2);
+list5.push(3);
+list5.push(4);
+list5.push(5);
+list5.splice(1, 2);
+console.log(list5);
+console.log(list5.length);
+console.log('-------------------------------');
 const list1 = new List(777);
 printTitle('List<number> = new List(777)');
 printResult(list1);
@@ -165,9 +248,9 @@ list4.push(2);
 list4.push(3);
 printTitle('Original list:');
 list4.forEach(printResult);
-printResult(JSON.parse(JSON.stringify(list4)));
+printResult(list4);
 printTitle('Reversed list:');
 list4.reverse();
 list4.forEach(printResult);
-printResult(JSON.parse(JSON.stringify(list4)));
+printResult(list4);
 //# sourceMappingURL=main.js.map

@@ -2,7 +2,8 @@
 /* eslint no-underscore-dangle: ["error", { "allowAfterThis": true }] */
 
 // Helpers
-const printTitle = (str: string) => console.log(`%c\n\t${str}\n`, 'color: #c0eb75; font-size: 14px');
+const printTitle = (str: string) =>
+  console.log(`%c\n\t${str}\n`, 'color: #c0eb75; font-size: 14px');
 const printResult = <T>(value: T) => console.table(value);
 
 class Stack<T> {
@@ -92,14 +93,21 @@ class List<T> {
 
   private _tail!: ListNode<T> | null;
 
+  private _length = 0;
+
   constructor(data?: T) {
     if (data !== undefined) {
       this._head = new ListNode(data);
       this._tail = this._head;
+      this._length = this.length + 1;
     } else {
       this._head = null;
       this._tail = null;
     }
+  }
+
+  get length(): number {
+    return this._length;
   }
 
   unshift = (data: T) => {
@@ -117,6 +125,7 @@ class List<T> {
       // ... ir pirmu mazgu priskiriamas naujas mazgas.
       this._head = newNode;
     }
+    this._length = this.length + 1;
   };
 
   push = (data: T) => {
@@ -129,6 +138,7 @@ class List<T> {
       this._tail.next = newNode;
       this._tail = newNode;
     }
+    this._length = this.length + 1;
   };
 
   forEach = (callback: ForEachCallbackFnc<T>) => {
@@ -155,7 +165,27 @@ class List<T> {
       this._tail = null;
     }
 
+    this._length = this.length - 1;
     return shiftItem;
+  };
+
+  pop = (): ListNode<T> | null => {
+    let current = this._head;
+    let newTail = current;
+
+    while (current!.next !== null) {
+      newTail = current;
+      current = current!.next;
+    }
+
+    this._tail = newTail;
+    this._tail!.next = null;
+
+    if (this._length > 0) {
+      this._length = this.length - 1;
+    }
+
+    return current;
   };
 
   reverse = () => {
@@ -169,7 +199,80 @@ class List<T> {
       this.push(tempStack.pop()!.data);
     }
   };
+
+  empty = () => {
+    while (this._head !== null) {
+      this.shift();
+    }
+  };
+
+  copy = (list: List<T>) => {
+    list.forEach((n) => {
+      this.push(n);
+    });
+  };
+
+  splice(start: number, deleteCount?: number, item?: T | T[]) {
+    if (!deleteCount && !item && start >= 0) {
+      while (this._length > start) {
+        this.pop();
+      }
+    } else if (!deleteCount && !item && start < 0) {
+      for (let i = 1; i <= Math.abs(start); i += 1) {
+        this.pop();
+      }
+    } else if (!item && start >= 0) {
+      const tempList: List<T> | null = new List();
+      let current = this._head;
+      for (let i = 1; i <= this.length; i += 1) {
+        if (i <= start || i > start + deleteCount!) {
+          tempList.push(current!.data);
+        }
+        current = current!.next;
+      }
+
+      while (this._head !== null) {
+        this.shift();
+      }
+
+      this.empty();
+      this.copy(tempList);
+    } else if (!item && start < 0) {
+      const tempList: List<T> | null = new List();
+      let current = this._head;
+      for (let i = 1; i <= this.length; i += 1) {
+        if (
+          i <= this._length - Math.abs(start) ||
+          i > this._length - Math.abs(start) + deleteCount!
+        ) {
+          tempList.push(current!.data);
+        }
+        current = current!.next;
+      }
+      this.empty();
+      this.copy(tempList);
+    }
+  }
 }
+
+console.log('-------------------------------');
+
+const list5: List<number> = new List();
+
+list5.push(1);
+list5.push(2);
+list5.push(3);
+list5.push(4);
+list5.push(5);
+
+list5.splice(1, 2);
+
+console.log(list5);
+console.log(list5.length);
+
+// list5.splice(10);
+
+console.log('-------------------------------');
 
 const list1: List<number> = new List(777);
 
@@ -252,9 +355,9 @@ list4.push(3);
 
 printTitle('Original list:');
 list4.forEach(printResult);
-printResult(JSON.parse(JSON.stringify(list4)));
+printResult(list4);
 
 printTitle('Reversed list:');
 list4.reverse();
 list4.forEach(printResult);
-printResult(JSON.parse(JSON.stringify(list4)));
+printResult(list4);
