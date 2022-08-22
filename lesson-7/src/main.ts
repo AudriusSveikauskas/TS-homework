@@ -5,6 +5,34 @@
 const printTitle = (str: string) => console.log(`%c\n\t${str}\n`, 'color: #c0eb75; font-size: 14px');
 const printResult = <T>(value: T) => console.table(value);
 
+class Stack<T> {
+  private _index: number;
+
+  [i: number]: T | undefined;
+
+  constructor() {
+    this._index = -1;
+  }
+
+  push = (data: T) => {
+    this._index += 1;
+    this[this._index] = data;
+  };
+
+  pop = (): T | undefined => {
+    const lastItem = this[this._index];
+    if (lastItem !== undefined) {
+      delete this[this._index];
+      if (this._index > -1) {
+        this._index -= 1;
+      }
+    }
+    return lastItem;
+  };
+
+  getLength = () => this._index + 1;
+}
+
 console.group(
   '1. Sukurkitę sąrašo mazgo struktūrą ListNode, bet kokiam duomenų tipui',
 );
@@ -105,6 +133,7 @@ class List<T> {
 
   forEach = (callback: ForEachCallbackFnc<T>) => {
     if (this._head === null) {
+      return;
     }
 
     let currentNode: ListNode<T> = this._head!;
@@ -112,7 +141,33 @@ class List<T> {
     do {
       callback(currentNode.data);
       currentNode = currentNode.next!;
-    } while (currentNode.next !== null);
+    } while (currentNode !== null);
+  };
+
+  shift = (): ListNode<T> | null => {
+    const shiftItem = this._head;
+
+    if (this._head !== null) {
+      this._head = this._head!.next;
+    }
+
+    if (this._head === null) {
+      this._tail = null;
+    }
+
+    return shiftItem;
+  };
+
+  reverse = () => {
+    const tempStack = new Stack<ListNode<T> | null>();
+
+    while (this._head !== null) {
+      tempStack.push(this.shift());
+    }
+
+    while (tempStack.getLength() > 0) {
+      this.push(tempStack.pop()!.data);
+    }
   };
 }
 
@@ -156,17 +211,17 @@ console.group('4. Sukurkite metodą pridėti elementui į sąrašo galą.');
 
 list1.push(987);
 
-printTitle('list1.pop(987)');
+printTitle('list1.push(987)');
 printResult(list1);
 
 list2.push('JavaScript');
 
-printTitle("list2.pop('JavaScript')");
+printTitle("list2.push('JavaScript')");
 printResult(list2);
 
 list3.push(false);
 
-printTitle('list3.pop(false)');
+printTitle('list3.push(false)');
 printResult(list3);
 
 console.groupEnd();
@@ -187,3 +242,19 @@ printTitle('list3.forEach(printResult)');
 list3.forEach(printResult);
 
 console.groupEnd();
+
+// Bonus
+
+const list4: List<number> = new List();
+list4.push(1);
+list4.push(2);
+list4.push(3);
+
+printTitle('Original list:');
+list4.forEach(printResult);
+printResult(list4);
+
+printTitle('Reversed list:');
+list4.reverse();
+list4.forEach(printResult);
+printResult(list4);

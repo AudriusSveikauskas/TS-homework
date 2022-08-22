@@ -1,6 +1,27 @@
 "use strict";
 const printTitle = (str) => console.log(`%c\n\t${str}\n`, 'color: #c0eb75; font-size: 14px');
 const printResult = (value) => console.table(value);
+class Stack {
+    _index;
+    constructor() {
+        this._index = -1;
+    }
+    push = (data) => {
+        this._index += 1;
+        this[this._index] = data;
+    };
+    pop = () => {
+        const lastItem = this[this._index];
+        if (lastItem !== undefined) {
+            delete this[this._index];
+            if (this._index > -1) {
+                this._index -= 1;
+            }
+        }
+        return lastItem;
+    };
+    getLength = () => this._index + 1;
+}
 console.group('1. Sukurkitę sąrašo mazgo struktūrą ListNode, bet kokiam duomenų tipui');
 class ListNode {
     data;
@@ -57,7 +78,7 @@ class List {
             this._head = newNode;
         }
     };
-    pop = (data) => {
+    push = (data) => {
         const newNode = new ListNode(data);
         if (this._head === null) {
             this._head = newNode;
@@ -70,12 +91,32 @@ class List {
     };
     forEach = (callback) => {
         if (this._head === null) {
+            return;
         }
         let currentNode = this._head;
         do {
             callback(currentNode.data);
             currentNode = currentNode.next;
-        } while (currentNode.next !== null);
+        } while (currentNode !== null);
+    };
+    shift = () => {
+        const shiftItem = this._head;
+        if (this._head !== null) {
+            this._head = this._head.next;
+        }
+        if (this._head === null) {
+            this._tail = null;
+        }
+        return shiftItem;
+    };
+    reverse = () => {
+        const tempStack = new Stack();
+        while (this._head !== null) {
+            tempStack.push(this.shift());
+        }
+        while (tempStack.getLength() > 0) {
+            this.push(tempStack.pop().data);
+        }
     };
 }
 const list1 = new List(777);
@@ -100,14 +141,14 @@ printTitle('list3.unshift(true)');
 printResult(list3);
 console.groupEnd();
 console.group('4. Sukurkite metodą pridėti elementui į sąrašo galą.');
-list1.pop(987);
-printTitle('list1.pop(987)');
+list1.push(987);
+printTitle('list1.push(987)');
 printResult(list1);
-list2.pop('JavaScript');
-printTitle("list2.pop('JavaScript')");
+list2.push('JavaScript');
+printTitle("list2.push('JavaScript')");
 printResult(list2);
-list3.pop(false);
-printTitle('list3.pop(false)');
+list3.push(false);
+printTitle('list3.push(false)');
 printResult(list3);
 console.groupEnd();
 console.group('5. Sukurkite metodą List.forEach klasėje List, kuris vykdytų parametru perduotą funkciją');
@@ -118,4 +159,15 @@ list2.forEach(printResult);
 printTitle('list3.forEach(printResult)');
 list3.forEach(printResult);
 console.groupEnd();
+const list4 = new List();
+list4.push(1);
+list4.push(2);
+list4.push(3);
+printTitle('Original list:');
+list4.forEach(printResult);
+printResult(list4);
+printTitle('Reversed list:');
+list4.reverse();
+list4.forEach(printResult);
+printResult(list4);
 //# sourceMappingURL=main.js.map
