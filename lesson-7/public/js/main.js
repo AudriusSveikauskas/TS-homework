@@ -165,9 +165,9 @@ list4.push(2);
 list4.push(3);
 printTitle('Original list:');
 list4.forEach(printResult);
-printResult(list4);
+printResult(JSON.parse(JSON.stringify(list4)));
 printTitle('Reversed list:');
 list4.reverse();
 list4.forEach(printResult);
-printResult(list4);
+printResult(JSON.parse(JSON.stringify(list4)));
 //# sourceMappingURL=main.js.map
