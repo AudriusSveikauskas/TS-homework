@@ -180,8 +180,8 @@ class List {
             const tempList = new List();
             let current = this._head;
             for (let i = 1; i <= this.length; i += 1) {
-                if (i <= this._length - Math.abs(start) ||
-                    i > this._length - Math.abs(start) + deleteCount) {
+                if (i <= this._length - Math.abs(start)
+                    || i > this._length - Math.abs(start) + deleteCount) {
                     tempList.push(current.data);
                 }
                 current = current.next;
