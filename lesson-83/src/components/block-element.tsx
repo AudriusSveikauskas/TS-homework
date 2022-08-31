@@ -1,12 +1,12 @@
 import React from 'react';
 import styles from './block-element.module.scss';
 
-type BlockElementProps = {
+interface BlockElementProps {
   tag?: 'p' | 'div' | 'section';
   id?: string;
   className?: string;
   children?: React.ReactNode;
-};
+}
 
 const BlockElement: React.FC<BlockElementProps> = function blockElement({
   tag,

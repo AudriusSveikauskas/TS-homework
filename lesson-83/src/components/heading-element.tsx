@@ -2,18 +2,19 @@ import React from 'react';
 import styles from './heading-element.module.scss';
 
 type HeadingElementProps = {
-  tag?: 'h1' | 'h2' | 'h3';
+  Tag?: 'h1' | 'h2' | 'h3';
   id?: string;
   className?: string;
   children?: React.ReactNode;
 };
 
 const HeadingElement: React.FC<HeadingElementProps> = function headingElement({
-  tag,
-  id,
-  className,
+  Tag = 'h3',
+
   children,
+  ...headerProps
 }) {
+  return <Tag {...headerProps}>{children}</Tag>;
   switch (tag) {
     case 'h1':
       return (
@@ -35,13 +36,6 @@ const HeadingElement: React.FC<HeadingElementProps> = function headingElement({
         </h3>
       );
   }
-};
-
-HeadingElement.defaultProps = {
-  tag: undefined,
-  id: undefined,
-  className: undefined,
-  children: '',
 };
 
 export default HeadingElement;

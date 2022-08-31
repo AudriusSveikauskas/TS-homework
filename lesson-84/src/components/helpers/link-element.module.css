@@ -1,0 +1,15 @@
+.button {
+  font-size: 18px;
+  text-decoration: none;
+  color: #926239;
+  border: #926239 1px solid;
+  padding: 10px 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.button:hover {
+  background: #926239;
+  color: #fff;
+}
+
+/*# sourceMappingURL=link-element.module.css.map */
